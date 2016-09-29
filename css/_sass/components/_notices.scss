@@ -1,0 +1,16 @@
+.notices-list {
+  li a {
+    vertical-align: middle;
+  }
+  li:before {
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    margin-right: .5em;
+    content: '';
+    background-image: url('/assets/images/icons/checkbox_checked.svg');
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

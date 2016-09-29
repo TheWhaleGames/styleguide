@@ -1,0 +1,7 @@
+.episodes-preview {
+  text-align: center;
+  a {
+    @extend #{$all-buttons};
+    width: 100%;
+  }
+}

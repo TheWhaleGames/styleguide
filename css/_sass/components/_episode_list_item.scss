@@ -1,0 +1,152 @@
+.episode-list-item {
+  @extend %block_link;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: .5em;
+  background-color: white;
+  border-bottom: 2px solid #ccc;
+}
+
+.episode-list-item[data-free="false"][data-purchased="false"] {
+  .episode__index {
+    color: #ffffff;
+  }
+  & a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: transparentize(#000, 0.4);
+  }
+}
+
+.episode-list-item--bookmarked:before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 1em 0 0 1em;
+  border-color: $jiggs-purple white white white;
+}
+
+.episode__index {
+  position: absolute;
+  right: rem(10);
+  top: rem(10);
+  z-index: 90;
+  color: $black-38;
+  text-align: center;
+  font-size: em(24);
+}
+
+.episode__thumb {
+  @include opacity-border;
+  @include aspect-ratio(7,5);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $dark-gray;
+  float: left;
+  width: 120px;
+  @include media($medium-screen-up) {
+    width: 140px;
+  }
+}
+
+.episode__content {
+  // float: left;
+  padding: .5em;
+  margin-left: 140px;
+  .content__title {
+    color: $base-font-color;
+    @include ellipsis;
+    margin-bottom: 0;
+  }
+  .info__updated-at {
+    color: $black-54;
+    display: none;
+    @include media($medium-screen-up) {
+      display: block;
+    }
+    font-size: em(14);
+  }
+  .content__info {
+    position: absolute;
+    bottom: .5em;
+    font-size: em(14);
+    .info__pick {
+      margin-right: 1em;
+    }
+    .info__pick:before {
+      font-family: 'bt-icons';
+      content: "\f10b";
+    }
+    .info__reply:before {
+      font-family: 'bt-icons';
+      content: "\f112";
+    }
+  }
+}
+
+.episode-list-item[data-up] {
+  &:after {
+    width: 26px;
+    height: 14px;
+    position: absolute;
+    bottom: .5em;
+    right: .5em;
+    background-image: url('/assets/images/icons/update_icon.svg');
+    background-repeat: no-repeat;
+    content : '';
+    margin: 0.4em;
+  }
+}
+
+.episode__price {
+  z-index: 90;
+  position: absolute;
+  bottom: .5em;
+  span.current_price {
+    color: white;
+    background-color: red;
+    border: 1px solid white;
+    border-radius: 12px;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 13px;
+  }
+  span.default_price {
+    color: white;
+    background-color: $violet;
+    border: 1px solid white;
+    border-radius: 12px;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 13px;
+    border-radius: 12px;
+  }
+  span.default_price--ondiscount {
+    @extend .default_price;
+    text-decoration: line-through; 
+  }
+  span.in_library {
+    color: $violet;
+    background-color: white;
+    border: 1px solid $violet;
+    border-radius: 12px;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 13px;
+  }
+  span.price_note {
+    color: red;
+    border: 1px solid red;
+    border-radius: 12px;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 13px;
+  }
+}

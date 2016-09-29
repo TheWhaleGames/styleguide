@@ -1,0 +1,24 @@
+.pagination {
+  padding: $base-spacing;
+  text-align: center;
+  span {
+    margin: .5em;
+    color: gray;
+  }
+  a {
+    color: gray;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+  .page {
+    display: none;
+    @include media($medium-screen) {
+      display: inline;
+    }
+  }
+  .page.current {
+    font-weight: bold;
+    color: $jiggs-purple;
+  }
+}

@@ -1,0 +1,41 @@
+.my-shops {
+  .container--compact {
+    padding: 0 0.5em;
+  }
+  .product {
+    margin: 0;
+    padding: 1em;
+    cursor: pointer;
+    overflow: hidden;
+    &:hover {
+      background-color: white;
+    }
+  }
+  .product__name {
+    float: left;
+  }
+  .product__price {
+    float: right;
+  }
+  td {
+    padding: 0;
+  }
+  .form__footer {
+    text-align: center;
+  }
+  input[type='submit'] {
+    background-color: $violet;
+    color: white;
+    padding: em(10) em(40);
+  }
+  #acknowledgement {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: $black-54;
+    font-size: em(14);
+    ul {
+      margin-left: 2em;
+      list-style-type: circle;
+    }
+  }
+}

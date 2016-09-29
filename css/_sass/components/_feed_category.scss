@@ -1,0 +1,21 @@
+.feed__category-wrapper {
+  position: relative;
+}
+.feed__new-paper {
+  margin-top: 1em;
+  a {
+    float: right;
+    display: none;
+    color:white;
+    padding: .5em 1em;
+    background-color: $violet;
+    border-radius: em(4);
+    @include media($large-screen-up) {
+      display: inline-block;
+    }
+  }
+}
+.feed__category {
+  margin-bottom: em(24);
+  @extend .tab--rounded;
+}

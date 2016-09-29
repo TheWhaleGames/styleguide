@@ -1,0 +1,23 @@
+$(document).ready(function(){
+  $('li.html').click(function()
+  {
+    if($(this).hasClass('active')){
+      $(this).removeClass('active');
+      $(this).closest('.components_box_lower').find('code.html').removeClass('active');
+    }
+    else{ 
+    $(this).addClass('active').siblings().removeClass('active');
+    $(this).closest('.components_box_lower').find('code.html').addClass('active').siblings().removeClass('active');
+    }
+  });
+  $('li.haml').click(function(){
+    if($(this).hasClass('active')){
+      $(this).removeClass('active');
+      $(this).closest('.components_box_lower').find('code.haml').removeClass('active');
+    }
+    else{ 
+    $(this).addClass('active').siblings().removeClass('active');
+    $(this).closest('.components_box_lower').find('code.haml').addClass('active').siblings().removeClass('active');
+    }
+  });
+});

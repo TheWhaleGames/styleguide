@@ -1,0 +1,36 @@
+#bulk-purchase {
+  .modal-dialog {
+    margin-top: 10em;
+    max-width: 360px;
+  }
+  .modal-header {
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+  }
+  .modal-content {
+    padding: 1em;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    border: solid 1px $black-20;
+  }
+  button[data-dismiss] {
+    color: $black-54;
+    border: 1px solid $black-54;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  .modal-body {
+    padding-top: 1em;
+    font-size: rem(14);
+    text-align: center;
+    .discount-coins {
+      color: rgba(255, 0, 0, 0.87);
+      font-weight: bold;
+    }
+    .discount {
+      font-size: rem(12);
+      color: rgba(255, 0, 0, 0.87);
+    }
+  }
+}

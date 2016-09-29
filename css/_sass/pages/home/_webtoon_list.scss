@@ -1,0 +1,39 @@
+.webtoon-list__wrapper {
+  @extend %horizontal_list;
+  ul.webtoon-list {
+    li {
+      padding: 0.25em;
+      width: 140px;
+      @include media($large-screen-up) {
+        width: (100%/7);
+      }
+    }
+  }
+
+  ul.webtoon-list--expandable {
+    @extend ul.webtoon-list;
+    @include media($large-screen-up) {
+      li.is-more {
+        position: relative;
+      }
+      li.is-more ~li {
+        display: none;
+      }
+      li.is-more .webtoon-card:after {
+        pointer-events: none;
+        color: white;
+        position: absolute;
+        content: '';
+        background-color: rgba(0,0,0,0.5);
+        background-image: url('/assets/images/icons/icon-more.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+      }
+    }
+  }
+}

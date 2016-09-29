@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>99C18FC3-3D44-4345-9684-DC2889E2AEE8</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="web_challenge" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="web_challenge-02-list" transform="translate(-804.000000, -204.000000)">
+            <g id="top" transform="translate(180.000000, 65.000000)">
+                <g id="btns" transform="translate(256.000000, 135.000000)">
+                    <g id="facebook" transform="translate(368.000000, 4.000000)">
+                        <rect id="Rectangle-278" fill="#3B5998" x="0" y="0" width="32" height="32" rx="16"></rect>
+                        <g id="icon" transform="translate(6.000000, 6.000000)">
+                            <rect id="Rectangle-284" x="0" y="0" width="20" height="20"></rect>
+                            <path d="M11.7780084,20 L11.7780084,10.877114 L14.8568479,10.877114 L15.3177908,7.32169968 L11.7780084,7.32169968 L11.7780084,5.05172475 C11.7780084,4.02234933 12.0653656,3.32088762 13.5495414,3.32088762 L15.4424779,3.32000494 L15.4424779,0.1400805 C15.1150078,0.0968294319 13.991404,0 12.6841863,0 C9.95500314,0 8.08664907,1.65686898 8.08664907,4.69971401 L8.08664907,7.32169968 L5,7.32169968 L5,10.877114 L8.08664907,10.877114 L8.08664907,20 L11.7780084,20 Z" id="Fill-1" fill="#FFFFFF"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

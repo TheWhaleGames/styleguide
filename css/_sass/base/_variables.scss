@@ -1,0 +1,69 @@
+
+// Typography
+// $base-font-family: 'Apple SD Gothic Neo', NanumBarunGothic, NanumGothic, 'Malgun Gothic', dotum, $helvetica;
+$base-font-family: helvetica;
+$heading-font-family: $base-font-family;
+
+// Font Sizes
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$jiggs-purple: #9B12EE;
+$jiggs-green: #37b7c0;
+$jiggs-yellow: #fff660;
+$jiggs-dark: #323232;
+$alert-color: #FFF6BF;
+$error-color: #FBE3E4;
+$notice-color: lighten($jiggs-purple, 40);
+$success-color: #E6EFC2;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+$lightest-gray: #f7f7f7;
+$dark-text-color: transparentize(#000, 0.13);
+$light-text-color: transparentize(#000, 0.46);
+
+$black-87: rgba(0, 0, 0, 0.87);
+$black-70: rgba(0, 0, 0, 0.7);
+$black-54: rgba(0, 0, 0, 0.54);
+$black-38: rgba(0, 0, 0, 0.38);
+$black-20: rgba(0, 0, 0, 0.2);
+$black-10: rgba(0, 0, 0, 0.1);
+$black-5: rgba(0, 0, 0, 0.05);
+$sunflower-yellow: #ffd300;
+$violet: #9b12ee;
+$reddish-pink: #ff2e65;
+$pale-grey: #e7e0eb;
+
+// Font Colors
+$base-font-color: $black-87;
+$action-color: $jiggs-purple;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: tint($base-background-color, 75%);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;
+
+// Shadow
+$base-box-shadow: 0 1px 3px rgba(0,0,0,0.15);

@@ -1,0 +1,43 @@
+section.featured {
+  @extend %card;
+  position: relative;
+  display: none;
+  @include media($large-screen-up) {
+    padding: 1em 3em 0 3em;
+  }
+  &:before {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: ' ';
+    width: 80px;
+    height: 35px;
+    background-image: url('/assets/images/icons/fanart_hot_img.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include media($large-screen-up) {
+      width: 128px;
+      height: 56px;
+    }
+  }
+  &.slick-initialized {
+    display: block;
+  }
+  @include media($large-screen-up) {
+    button.slick-prev {
+      width: 40px;
+      &:before {
+        font-size: 40px;
+        color: $light-gray;
+      }
+    }
+    button.slick-next {
+      width: 40px;
+      &:before {
+        font-size: 40px;
+        color: $light-gray;
+      }
+    }
+  }
+}

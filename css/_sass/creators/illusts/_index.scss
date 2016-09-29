@@ -1,0 +1,106 @@
+.creators-illusts-index {
+  .challenge-illusts {
+    position: relative;
+    background-color: transparent;
+  }
+  .challenge-illusts__actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    a {
+      background-color: white;
+    }
+  }
+
+  ul.fanarts {
+    > li {
+      @include span-columns(3);
+      @include omega(4n);
+      margin-top: .5em;
+      margin-bottom: .5em;
+    }
+  }
+  .fanart-item {
+    overflow: visible;
+    .plural {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background-color: $black-70;
+      border-radius: 50%;
+      background-image: url('/assets/images/upload-illust-plural.svg');
+      background-position: center;
+      background-size: em(16);
+      background-repeat: no-repeat;
+      padding: .5em;
+      margin: .5em;
+      width: em(32);
+      height: em(32);
+      color: white;
+    }
+  }
+  .fanart-item__caption {
+    border: none;
+  }
+  .fanart-item__tags {
+    color: $black-54;
+    font-size: em(14);
+    li {
+      display: inline-block;
+      &:before {
+        content: '#';
+      }
+    }
+  }
+  .fanart-item__actions {
+    text-align: center;
+    a {
+      font-size: .75em;
+      display: inline-block;
+      border-radius: .25em;
+      padding: $base-spacing/8 $base-spacing;
+    }
+    a.destroy {
+      background-color: #e4e4e4;
+      border: solid 1px $black-20;
+      color: $black-54;
+    }
+    a.default {
+      background-color: white;
+      border: solid 1px $violet;
+      color: $violet;
+    }
+    a.edit {
+      background-color: white;
+      border: solid 1px $black-87;
+      color: $black-87;
+    }
+
+    .dropdown {
+      line-height: 0;
+      overflow: hidden;
+      display: inline;
+    }
+    .dropdown-button:after {
+      right: .5em;
+      color: $violet;
+    }
+    .dropdown-container {
+      line-height: 1.5;
+      vertical-align: top;
+    }
+    .dropdown-menu a {
+      padding: 0;
+    }
+    .dropdown-menu svg {
+      float: left;
+      margin-right: .5em;
+      width: 24px;
+      height: 24px;
+    }
+    .dropdown-menu span {
+      font-size: em(12);
+      color: $black-54;
+    }
+  }
+}

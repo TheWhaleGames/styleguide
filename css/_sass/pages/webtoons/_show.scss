@@ -1,0 +1,99 @@
+.webtoons-preview_episodes,
+.webtoons.webtoons-show {
+  background-color: #efefef;
+  section.episodes-list {
+    padding: 0 $base-spacing/4;
+    margin-top: 1.5em;
+    @include media($large-screen-up) {
+      @include span-columns(8);
+      padding-left: 1em;
+    }
+  }
+
+  aside.webtoon-more {
+    display: none;
+    margin-top: 1.5em;
+    @include media($large-screen-up) {
+      @include span-columns(4);
+      @include omega;
+    }
+
+    section {
+      @extend %card;
+      padding: $base-spacing/2;
+      margin-bottom: $base-spacing;
+      h6 {
+        font-size: 1em;
+        margin-bottom: .5em;
+      }
+    }
+  }
+
+  #info__modal {
+    .close {
+      float: right;
+      border: none;
+      color: $black-38;
+      padding: 0;
+      font-size: 1em;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    .row {
+      @include clearfix;
+      h4 {
+        float: left;
+        font-size: 0.75em;
+        color: $black-54;
+        font-weight: normal;
+        @include clearfix;
+        line-height: 2em;
+      }
+      ul,
+      p {
+        margin-left: 4em;
+        font-size: 0.875em;
+      }
+      li {
+        display: inline-block;
+        margin-right: 1em;
+        &:before {
+          color: $violet;
+          content: '#';
+        }
+      }
+    }
+    .modal-dialog {
+      max-width: 38.25em;
+      margin: 6em auto;
+    }
+    .modal-content {
+      border-radius: 4px;
+      padding: $base-spacing;
+    }
+    .modal-header {
+      text-align: center;
+      color: $violet;
+    }
+    .modal {
+      z-index: 90000;
+    }
+  }
+  .modal-backdrop {
+    background-color: $black-70;
+  }
+  .episodes-preview {
+    a {
+      line-height: 0;
+      background-color: white;
+      border: 1px solid black-10;
+      border-radius: em(4);
+      span {
+        font-size: em(18);
+        color: $black-87;
+        vertical-align: super;
+      }
+    }
+  }
+}

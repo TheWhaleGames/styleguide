@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>5BA61392-6B36-49C3-80FB-2C9840505BCF</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <ellipse id="path-1" cx="8" cy="8" rx="8" ry="8"></ellipse>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="16" height="16" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="web_alarm" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.38">
+        <g id="web_alarm_menu_login" transform="translate(-932.000000, -22.000000)">
+            <g id="navi">
+                <g id="search" transform="translate(924.000000, 12.000000)">
+                    <g id="search-icon" transform="translate(8.000000, 10.000000)">
+                        <use id="Oval-9" stroke="#000000" mask="url(#mask-2)" stroke-width="4" xlink:href="#path-1"></use>
+                        <path d="M11.7497778,13.1336111 L12.8697222,12.0136667 L19.2436944,18.3881667 C19.5540278,18.6979722 19.5571944,19.1983056 19.2458056,19.5096944 L19.2458056,19.5096944 C18.9365278,19.8184444 18.4351389,19.8184444 18.1242778,19.5075833 L11.7497778,13.1336111 L11.7497778,13.1336111 Z" id="Rectangle-29" fill="#000000"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

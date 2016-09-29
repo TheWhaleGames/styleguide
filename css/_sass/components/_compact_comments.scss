@@ -1,0 +1,87 @@
+.comments--compact {
+  margin-top: 1em;
+  // Comment item
+  form {
+    position: relative;
+    input {
+      @include appearance(none);
+      box-sizing: border-box;
+      @include transition(border-color);
+      position: relative;
+      width: 100%;
+    }
+    button[type=submit] {
+      @include position(absolute, 0em 0em 0em null);
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 1em;
+      padding-right: 1em;
+      color: white;
+      border: none;
+      background-color: $jiggs-purple;
+      &:disabled {
+        background-color: $medium-gray;
+        color: white;
+      }
+    }
+  }
+  .comments__load-more {
+    background-color: transparent;
+    color: $jiggs-purple;
+    border: 1px solid $jiggs-purple;
+    padding: .3em;
+
+    &:hover {
+      color: lighten($jiggs-purple, 10%);
+    }
+  }
+  .comment {
+    $comment-gutter: 1.4em;
+    $comment-color: $base-font-color;
+    padding: .3em;
+    position: relative;
+    overflow: hidden;
+    display: block;
+
+    .comment__author {
+      color: $jiggs-purple;
+      margin-right: $base-spacing;
+    }
+    .comment__date {
+      color: $medium-gray;
+    }
+    .comment__action {
+      display: none;
+      position: absolute;
+      right: 0;
+      button {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        margin-left: 1em;
+
+        &:hover {
+          color: $light-gray;
+        }
+        &:focus {
+          color: $medium-gray;
+        }
+      }
+      button[disabled] {
+        color: $medium-gray;
+        &:hover,
+        &:focus {
+          color: $medium-gray;
+        }
+      }
+    }
+    &:hover {
+      background-color: lighten($light-gray, 10%);
+      .comment__action {
+        display: inline-block;
+      }
+    }
+  }
+}

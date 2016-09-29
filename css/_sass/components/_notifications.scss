@@ -1,0 +1,130 @@
+.notification-wrapper {
+  padding: .5em;
+  display: none;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+  position: absolute;
+  border-bottom: 2px solid $violet;
+  right: -40px;
+  z-index: 10000;
+  min-width: 320px;
+  top: em(44);
+  @include media($large-screen-up) {
+    top: 4em;
+    width: 360px;
+    right: 0;
+  }
+  &.show {
+    display: block;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -20px;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid white;
+    right: 50px;
+    @include media($large-screen-up) {
+      right: 20px;
+    }
+  }
+}
+.notification-button {
+  width: em(40);
+  height: em(44);
+  @include media($large-screen-up) {
+    width: em(60);
+    height: em(64);
+  }
+  position: relative;
+  background-image: url('/assets/images/alarm-icon-default.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+  > a {
+    display: inline-block;
+    width: em(40);
+    height: em(44);
+    @include media($large-screen-up) {
+      width: em(60);
+      height: em(64);
+    }
+  }
+  &.active {
+    background-color: $black-5;
+    background-image: url('/assets/images/alarm-icon-active.svg');
+  }
+}
+.notification-button[data-unread] {
+  background-image: url('/assets/images/alarm-icon-active.svg');
+}
+.notification-button[data-unread]:before {
+  content: attr(data-unread);
+  color: white;
+  position: absolute;
+  line-height: 1em;
+  top: 12px;
+  left: 55%;
+  font-size: em(10);
+  border-radius: em(6);
+  padding: .2em .5em;
+  color: white;
+  background-color: #ff001f;
+}
+.notifications {
+  max-height: 490px;
+  overflow-y: auto;
+  line-height: 1em;
+  li {
+    @include clearfix;
+    padding: .5em;
+  }
+  li + li {
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+  .notification__icon {
+    text-align: center;
+    width: em(40);
+    height: em(40);
+    float: left;
+    &:hover {
+      opacity: .8;
+    }
+  }
+  .notification__icon img {
+    border-radius: 50%;
+    width: em(40);
+    height: em(40);
+    &:hover {
+    }
+  }
+  .notification__body {
+    display: block;
+    margin-left: em(46);
+    width: auto;
+    overflow: hidden;
+  }
+  .notification__body img {
+    float: right;
+    max-width: em(56);
+    max-height: em(40);
+  }
+  .notification__message {
+    font-size: em(12);
+    color: $black-87;
+  }
+  .notification__message span {
+  }
+  .notification__time {
+    font-size: em(12);
+    color: $black-54;
+  }
+  p.empty {
+    text-align: center;
+    color: $black-54;
+    padding: 2em;
+  }
+}

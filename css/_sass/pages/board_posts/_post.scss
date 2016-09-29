@@ -1,0 +1,40 @@
+.board_posts.board_posts-show .post-main {
+  .contents img {
+    display: block;
+    margin: 0 auto;
+  }
+  .title {
+    @include ellipsis;
+  }
+  .meta {
+    font-size: .9em;
+    color: $medium-gray;
+    span {
+      @include media($medium-screen-up) {
+        margin-right: $base-spacing/2;
+      }
+    }
+    span:after {
+      padding-left: $base-spacing/2;
+      content: '|';
+    }
+    span:last-child:after {
+      content: '';
+    }
+    .author img {
+      display: inline;
+      width: .9em;
+      height: .9em;
+    }
+  }
+  .contents {
+    margin-top: $base-spacing;
+    margin-bottom: $base-spacing;
+  }
+  .welcome {
+    text-align: center;
+    font-size: 0.8em;
+    color: darken($jiggs-green, 10%);
+  }
+
+}

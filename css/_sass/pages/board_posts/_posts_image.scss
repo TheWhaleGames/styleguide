@@ -1,0 +1,26 @@
+.board_posts {
+  .posts-list {
+  }
+
+  .post-item--image {
+    @extend %block_link;
+    border: 1px solid $light-gray;
+    margin: $base-spacing/4;
+    padding: $base-spacing/2;
+    background-color: white;
+
+    .thumbnail {
+      @include span-columns(2);
+    }
+    .body {
+      .title {
+      }
+      .user-name {
+      }
+      .meta {
+      }
+    }
+    .status {
+    }
+  }
+}

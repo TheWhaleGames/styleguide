@@ -1,0 +1,39 @@
+.board-post-list__wrapper {
+  @extend %horizontal_list;
+  li {
+    padding: 0.25em;
+    width: 140px;
+    @include media($large-screen-up) {
+      width: (100%/5);
+    }
+  }
+  .board-post-card {
+    @extend %card;
+    @extend %block_link;
+  }
+  .board-post-card__thumb {
+    @include opacity_border;
+    @include aspect-ratio(1,1);
+    background-image: url(asset_path('text.png'));
+    background-color: $dark-gray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .board-post-card__body {
+    padding: em(8);
+  }
+  .board-post-card__title{
+    color: $black-87;
+    span {
+      @include ellipsis;
+    }
+  }
+  .board-post-card__author {
+    color: $black-54;
+    font-size: em(14);
+    span {
+      @include ellipsis;
+    }
+  }
+}

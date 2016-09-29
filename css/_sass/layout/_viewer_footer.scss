@@ -1,0 +1,112 @@
+body.modal-open {
+  footer.viewer-footer.active {
+    z-index: 0;
+  }
+}
+footer.viewer-footer {
+  cursor: auto;
+  .footer-wrap {
+    @include media($large-screen-up) {
+      width: 45em;
+    }
+    margin: 0 auto;
+  }
+  $navigation-background: transparentize(white, 0.02);
+  $navigation-color: $dark-gray;
+  $navigation-height: 3.75em;
+  height: $navigation-height;
+  position: fixed;
+  bottom: 0;
+  background-color: $navigation-background;
+  color: $navigation-color;
+  width: 100%;
+  box-shadow: 0 -2px 3px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 200ms linear;
+  transform: translateY(100%);
+
+  &.active {
+    transform: translateY(0);
+    z-index: 101;
+  }
+
+  ul.comments-nav {
+    float: left;
+  }
+
+  ul.episode-nav {
+    float: right;
+    display: table;
+    line-height: 0;
+    text-align: center;
+    li {
+      display: table-cell;
+      position: relative;
+      @include media($medium-screen-up) {
+        width: 8em;
+      }
+      line-height: $navigation-height;
+      &.empty {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+        color: $medium-gray;
+        cursor: not-allowed;
+      }
+    }
+    a {
+      color: $base-font-color;
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+      @include media($medium-screen-up) {
+        padding-left: 1em;
+        padding-right: 1em;
+      }
+      width: 100%;
+      position: relative;
+      display: inline-block;
+      &:hover {
+        color: white;
+        background-color: $dark-gray;
+      }
+    }
+  }
+
+  button.button--comment {
+    color: $base-font-color;
+    height: $navigation-height;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    @include media($medium-screen-up) {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+    border-radius: 0;
+    span {
+      vertical-align: middle;
+    }
+    &:focus {
+      outline: none;
+      background-color: transparent;
+      color: $base-font-color;
+    }
+    &:hover {
+      background-color: lighten($dark-gray, 10%);
+      color: white;
+    }
+    .footer__comment-icon {
+      font-size: 1.2em;
+    }
+  }
+}
+
+
+footer.viewer-footer--without-comments {
+  @extend footer.viewer-footer;
+  ul.episode-nav {
+    float: none;
+    margin: 0 auto;
+  }
+}

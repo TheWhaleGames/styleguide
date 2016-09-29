@@ -1,0 +1,50 @@
+@import "banners";
+@import "completes";
+@import "detail";
+@import "episode_list_header";
+@import "episodes_preview";
+@import "index";
+@import "populars";
+@import "show";
+@import "week_table";
+
+ul.week {
+  height: 40px;
+  background-color: white;
+  border-radius: 2em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  width: 100%;
+  clear: both;
+  display: table !important;
+  table-layout: fixed;
+  text-align: center;
+  li {
+    display: table-cell;
+    overflow: hidden;
+    text-align: center;
+    margin-right: 2em;
+    padding: .2em;
+    @include media($medium-screen-up) {
+      padding: .25em;
+    }
+    a {
+      position: relative;
+      vertical-align: middle;
+      display: inline-block;
+      color: $base-font-color;
+      line-height: 2em;
+      width: 2em;
+      height: 2em;
+    }
+
+    &.active a {
+      font-weight: bold;
+      color: $jiggs-purple;
+    }
+
+    &.today {
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.board-list__wrapper {
+  @extend %horizontal_list;
+  ul.board-list {
+    li {
+      padding: 0.25em;
+      width: em(140);
+      @include media($large-screen-up) {
+        width: (100%/5);
+      }
+    }
+  }
+
+  .board__card {
+    @extend %card;
+    height: em(180);
+    text-align: center;
+    padding: 0.5em;
+  }
+  .board__avatar {
+    border-radius: 50%;
+    width: em(80);
+    height: em(80);
+    margin-top: 1em;
+  }
+  .board__user-name {
+    color: $black-87;
+    line-height: 0;
+    span {
+      @include ellipsis;
+      line-height: em(20);
+    }
+  }
+  .board__greeting {
+    display: none;
+    white-space: normal;
+    color: $black-54;
+    font-size: em(14);
+    @include media($medium-screen-up) {
+      display: block;
+    }
+  }
+}

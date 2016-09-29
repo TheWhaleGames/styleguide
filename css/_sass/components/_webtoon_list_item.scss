@@ -1,0 +1,36 @@
+@import 'components/block_link';
+
+.webtoon-list-item {
+  @extend %block_link;
+  overflow: hidden;
+
+  a {
+    @extend %card;
+    color: $base-font-color;
+  }
+
+  .webtoon__thumb {
+    @include aspect-ratio(14, 10);
+    @include opacity-border;
+    background-color: $dark-gray;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid $light-gray;
+  }
+  .webtoon__content {
+    padding: .5em;
+    .content__title {
+      color: $black-87;
+      font-size: 1em;
+      font-weight: normal;
+      @include ellipsis;
+      display: block;
+    }
+    .content__author {
+      @include ellipsis;
+      display: block;
+      color: $black-54;
+    }
+  }
+}

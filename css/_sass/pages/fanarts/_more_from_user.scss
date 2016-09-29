@@ -1,0 +1,23 @@
+.fanarts-show {
+  section.more-from-user {
+    background-color: $black-5;
+    border-radius: em(4);
+    padding: em(12) em(16) em(16) em(16);
+    margin-bottom: em(8);
+  }
+  .more-fanart-item {
+    border-radius: $base-border-radius;
+    padding: .5em;
+    position: relative;
+
+    .fanart__thumb {
+      overflow: hidden;
+      @include opacity-border;
+      @include aspect-ratio(166,200);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: $dark-gray;
+    }
+  }
+}

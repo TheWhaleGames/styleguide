@@ -1,0 +1,56 @@
+.fanarts {
+  .featured-fanart {
+    position: relative;
+    margin: $base-spacing/4;
+    overflow: hidden;
+    background-color: white;
+    a {
+      display: block;
+      overflow: hidden;
+    }
+    @include media($medium-screen-up) {
+      margin: .5em;
+    }
+    @include media($large-screen-up) {
+      margin: .5em;
+    }
+  }
+
+  .featured-fanart__thumb {
+    @include opacity-border($border-radius: $base-border-radius);
+    position: relative;
+    margin: 0 auto;
+    @include aspect-ratio(240,336);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $dark-gray;
+  }
+  .featured-fanart__caption {
+    text-align: center;
+    margin: .5em .5em 0.875em .5em;
+  }
+  .featured-fanart__title {
+    color: $dark-text-color;
+    font-size: 1em;
+    @include media($large-screen-up) {
+      font-size: 1.125em;
+    }
+    font-weight: bold;
+    span {
+      @include ellipsis;
+      display: block;
+    }
+  }
+  .featured-fanart__author {
+    color: $medium-gray;
+    font-size: .9em;
+    @include media($large-screen-up) {
+      font-size: 0.75em;
+    }
+    span {
+      @include ellipsis;
+      display: block;
+    }
+  }
+}

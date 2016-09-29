@@ -1,0 +1,52 @@
+.recommend-webtoons-list {
+  .recommended-item {
+    padding: $base-spacing/2 0;
+    border-bottom: 1px solid $light-gray;
+    background-color: white;
+    &:last-child {
+      border-bottom: none;
+    }
+    a {
+      color: $base-font-color;
+      display: block;
+      overflow: hidden;
+    }
+    overflow: hidden;
+    display: block;
+    .webtoon__thumb {
+      float: left;
+      width: 98px;
+      height: 70px;
+      @include opacity-border;
+      @include aspect-ratio(14, 10);
+      overflow: hidden;
+      background-size: cover;
+      background-position: center center;
+      background-color: $dark-gray;
+    }
+    .webtoon__content {
+      padding-left: em(8);
+      @include media($large-screen-up) {
+        @include span-columns(8);
+        @include omega;
+      }
+    }
+    .rating {
+      color: $base-font-color;
+    }
+    a:hover {
+      opacity: 0.8;
+    }
+    img {
+      border: 1px solid $base-border-color;
+    }
+    .webtoon__name {
+      font-size: em(14);
+      color: $black-87;
+    }
+    .webtoon__author {
+      font-size: em(12);
+      color: $black-54;
+    }
+  }
+}

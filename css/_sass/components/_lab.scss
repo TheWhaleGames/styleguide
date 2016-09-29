@@ -1,0 +1,28 @@
+.lab {
+  @extend %card;
+  .lab__thumb {
+    @include aspect-ratio(1200, 630);
+    @include opacity-border;
+    background-size: cover;
+    background-position: center;
+    background-color: $dark-gray;
+  }
+  .lab__body {
+    padding: .5em;
+  }
+  .lab__title {
+    height: 2em;
+    span {
+      @include ellipsis;
+      color: $dark-text-color;
+    }
+  }
+  .lab__users {
+    height: 1em;
+    span {
+      @include ellipsis;
+      font-size: 0.75em;
+      color: $light-text-color;
+    }
+  }
+}

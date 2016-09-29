@@ -1,0 +1,71 @@
+.feeds,
+.feeds-tags,
+.feeds-nows {
+  background-color: #efefef;
+  .onboarding {
+    padding: 2em;
+    text-align: center;
+  }
+
+  .feeds__navigation {
+    $active-tab-color: $jiggs-purple;
+    min-width: 720px;
+    width: 100%;
+    margin: $base-spacing auto;
+    display: table;
+    table-layout: fixed;
+    li {
+      line-height: 2em;
+      display: table-cell;
+      text-align: center;
+      border: 1px solid $light-gray;
+      a {
+        display: inline-block;
+        width: 100%;
+      }
+      &.active {
+        background-color: $active-tab-color;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+  .tags__list {
+    li {
+      display: inline-block;
+    }
+  }
+
+  .feeds__list {
+    padding-left: .5em;
+    padding-right: .5em;
+    @include media($large-screen-up) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    max-width: 720px;
+    margin: 0 auto;
+    li {
+      min-height: 164px;
+      color: $base-font-color;
+      padding: 2em 0 2em 0;
+      border-bottom: 1px solid $light-gray;
+    }
+    img {
+      border: 1px solid $light-gray;
+    }
+    li > a {
+      float: right;
+      margin-left: $base-spacing * 2;
+      width: 100px;
+      height: 100px;
+    }
+    a {
+      color: $base-font-color;
+    }
+    .feed-item__info {
+      color: $light-text-color;
+    }
+  }
+}

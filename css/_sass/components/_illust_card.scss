@@ -1,0 +1,29 @@
+.illust-card {
+  @extend %card;
+  @extend %block_link;
+
+  .illust-card__thumb {
+    @include opacity_border;
+    @include aspect-ratio(5,6);
+    background-color: $dark-gray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .illust-card__body {
+    padding: em(8);
+  }
+  .illust-card__title {
+    color: $black-87;
+    span {
+      @include ellipsis;
+    }
+  }
+  .illust-card__author {
+    color: $black-54;
+    font-size: em(14);
+    span {
+      @include ellipsis;
+    }
+  }
+}

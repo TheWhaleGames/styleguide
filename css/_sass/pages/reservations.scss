@@ -1,0 +1,277 @@
+.reservations-releases,
+.reservations-actives {
+  .container {
+    max-width: em(720);
+    > h1 {
+      margin-top: em(24);
+      margin-bottom: em(20);
+      text-align: center;
+      font-size: em(18);
+      color: $black-87;
+    }
+  }
+  .tab ul {
+    max-width: em(400);
+  }
+}
+.reservation-show {
+  @include outer-container();
+  margin-top: $base-spacing;
+  margin-bottom: $base-spacing;
+
+  .modal-dialog {
+    margin-top: 5em;
+  }
+  .modal-content {
+    padding: 1em;
+  }
+  button.close {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.reservation-info {
+  @include span-columns(12);
+  @include omega();
+  @include media($medium-screen-up) {
+    @include span-columns(4);
+  }
+  h1 {
+    margin: 0;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  .info__producer {
+    display: block;
+    color: $medium-gray;
+    font-size: 90%;
+  }
+  .info__release-date {
+    display: block;
+  }
+  form {
+    input[type="submit"] {
+      display: block;
+      margin: 1em auto;
+      color: white;
+      background-color: $violet;
+      font-size: 1.3em;
+    }
+  }
+}
+.reservation__game-info {
+  @extend %card;
+  padding: $base-spacing/2;
+  .info__game-name {
+    font-size: 1.8em;
+    margin-top: 0.5em;
+  }
+}
+
+.reservation__join {
+  @extend %card;
+  padding: $base-spacing/2;
+  margin-top: 1em;
+  z-index: 99;
+
+  &[data-joined="true"] {
+    background-color: $medium-gray;
+    text-align: center;
+    color: white;
+  }
+  &[data-login-required] {
+    text-align: center;
+  }
+}
+
+.reservation__release-info {
+  @extend %card;
+  margin-top: 1em;
+  padding: $base-spacing/2;
+  .reservation__download {
+    text-align: center;
+    background-color: $violet;
+    padding: em(8) em(16);
+    a {
+      color: white;
+    }
+  }
+}
+
+.reservation-content {
+  @extend %card;
+  @include media($medium-screen-up) {
+    margin-top: 0;
+    padding: $base-spacing;
+    @include span-columns(8);
+    @include omega();
+  }
+  margin-top: 1em;
+  padding: $base-spacing/2;
+  @include span-columns(12);
+}
+
+.accordion-tabs-minimal {
+  // $base-border-color: gainsboro !default;
+  $base-background-color: white !default;
+  $base-link-color: $action-color !default;
+  // $dark-gray: #333 !default;
+  $tab-link-color: $violet;
+  $tab-border: 1px solid $base-border-color;
+  $tab-active-background: $base-background-color;
+  $tab-inactive-color: $base-background-color;
+  $tab-inactive-hover-color: silver;
+  $tab-mode: $medium-screen;
+
+  @include clearfix;
+  line-height: 1.5;
+  padding: 0;
+
+  li.tab-header-and-content {
+    list-style: none;
+    @include media($tab-mode) {
+      display: inline;
+    }
+  }
+
+  a.tab-link {
+    background-color: $tab-inactive-color;
+    border-top: $tab-border;
+    color: $tab-link-color;
+    display: block;
+    font-weight: 400;
+    padding:($base-spacing / 2) $gutter;
+    text-decoration: none;
+
+    @include media($tab-mode) {
+       display: inline-block;
+       border-top: 0;
+    }
+
+    &:hover {
+      color: $base-link-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.is-active {
+      border-bottom: 0;
+      @include media($tab-mode) {
+        border: $tab-border;
+        border-bottom-color: $tab-active-background;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  .tab-content {
+    display: none;
+    padding: $base-spacing/2 $gutter/2;
+    @include media($tab-mode) {
+      padding: $base-spacing $gutter;
+    }
+    width: 100%;
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+    @include media($tab-mode) {
+      border-top: $tab-border;
+      float: left;
+    }
+  }
+}
+
+.reservation-item {
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid $black-20;
+  margin: em(10) 0;
+  @include clearfix;
+}
+
+.reservation-item[data-joined="true"]:after {
+  position: absolute;
+  bottom: em(10);
+  right: em(16);
+  content: '참여완료';
+  color: $black-38;
+  border: 1px solid $black-38;
+  border-radius: em(16);
+  padding: em(5) em(16);
+  font-size: em(14);
+}
+.reservation-item[data-joined="false"]:after {
+  position: absolute;
+  bottom: em(10);
+  right: em(16);
+  content: '참여하기';
+  color: $violet;
+  border: 1px solid $violet;
+  border-radius: em(16);
+  padding: em(5) em(16);
+  font-size: em(14);
+}
+
+.reservation-item__thumbnail {
+  background-color: $dark-gray;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  float: left;
+  width: 40%;
+  @include aspect-ratio(296,150);
+  @include opacity-border;
+}
+
+.reservation-item__body {
+  float: left;
+  width: 60%;
+  padding: em(16);
+  position: relative;
+}
+
+.reservation-item__title {
+  color: $black-87;
+}
+.reservation-item__summary {
+  font-size: em(14);
+  color: $black-54;
+  p { margin: 0; }
+}
+
+.reservation-item__release-date {
+  font-size: em(14);
+  color: $black-87;
+}
+
+.reservation-item--released {
+  @extend .reservation-item;
+}
+
+.reservation-item__reward {
+  color: #ff2e6d;
+}
+
+.reservation-item__joined-status {
+  float: right;
+}
+
+.reservation-item__expires_at {
+  color: $black-87;
+  font-size: rem(14);
+  span {
+    display: block;
+  }
+}
+.reservation-item__expires_at-date {
+  color: #ff2e6d;
+  font-size: rem(16);
+}

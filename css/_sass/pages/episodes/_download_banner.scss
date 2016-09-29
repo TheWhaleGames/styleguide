@@ -1,0 +1,18 @@
+.promotion__character {
+  padding: 20px;
+  padding-bottom: 80px;
+  text-align: center;
+  background-color: $jiggs-purple;
+  color: white;
+  font-size: 16px;
+  @include media($medium-screen) {
+    font-size: 30px;
+  }
+  a img {
+    width: 108px;
+    @include media($medium-screen-up) {
+      width: 216px;
+    }
+
+  }
+}

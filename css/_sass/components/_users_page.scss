@@ -1,0 +1,27 @@
+.users-page {
+  display: inline-block;
+  .users-page__avatar {
+    margin-right: .5em;
+    float: left;
+    width: em(40);
+    height: em(40);
+    border-radius: 50%;
+  }
+
+  .users-page__icon {
+    border-radius: 50%;
+    width: .8em;
+    height: .8em;
+  }
+
+  .users-page__name {
+    font-color: $black-87;
+    line-height: 2.4em;
+    margin-right: .2em;
+
+    @include media($large-screen-up) {
+      margin-bottom: 1.5em;
+      font-size: 1em;
+    }
+  }
+}

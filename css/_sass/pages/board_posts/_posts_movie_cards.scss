@@ -1,0 +1,56 @@
+.board_posts {
+  .cards {
+    @include media($medium-screen) {
+      padding: 1em;
+    }
+  }
+  .card {
+    border-radius: $base-border-radius;
+    background-color: white;
+    box-shadow: -1 2px 4px $light-gray;
+    border: 1px solid $light-gray;
+    margin-bottom: 1em;
+  }
+  .card__image {
+    line-height: 0;
+  }
+  .card__body {
+    padding: .5em;
+  }
+  .card__title {
+    font-size: 1.2em;
+    color: $base-font-color;
+  }
+  .card__author { 
+    color: $jiggs-purple;
+  }
+  .card__footer {
+    position: relative;
+    color: $medium-gray;
+    padding: $base-spacing/2;
+    border-top: 1px solid $light-gray;
+    .card__link {
+      float: right;
+      font-size: .9em;
+      a {
+        color: $medium-gray;
+      }
+    }
+    .pick_count {
+      &:before {
+        margin-right: .5em;
+        font-family: 'bt-icons';
+        content: '\f10b';
+      }
+      margin-right: 1em;
+    }
+    .comment_count {
+      &:before {
+        margin-right: .5em;
+        font-family: 'bt-icons';
+        content: '\f112';
+      }
+    }
+  }
+}
+

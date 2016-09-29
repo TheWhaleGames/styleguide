@@ -1,0 +1,13 @@
+.tab {
+  @extend %bottom_lined_tab;
+}
+.tab--rounded {
+  @extend %rounded_tab;
+}
+.tab-pane {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

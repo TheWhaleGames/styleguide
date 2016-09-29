@@ -1,0 +1,127 @@
+.items.items-new, .items.items-edit {
+  background-color: white;
+}
+.items-new,
+.items-create,
+.items-update,
+.items-edit {
+  header {
+    // display: none;
+  }
+  footer.footer {
+    // display: none;
+  }
+  .item-form__wrapper {
+    margin: 0 auto;
+    max-width: 720px;
+  }
+
+  .item-form__top {
+    padding: $base-spacing/2;
+    border-bottom: 1px solid $light-gray;
+    background-color: white;
+    z-index: 100;
+
+    .nice-select {
+      float: none;
+      display: inline-block;
+      clear: none;
+    }
+    .item-form__actions {
+      display: inline-block;
+      float: right;
+    }
+
+    #item_delete_draft {
+      padding: $base-spacing/2 $base-spacing;
+    }
+  }
+
+  .item-form__main {
+    margin-top: 2em;
+    input#item_title[type='text'] {
+      border: 0;
+      box-shadow: none;
+      padding: 0;
+      font-size: 2em;
+    }
+    .editable {
+      outline: 0;
+    }
+    .medium-editor-placeholder:after {
+      color: $light-gray;
+    }
+  }
+
+  .field_with_errors {
+    input {
+      border-bottom: 2px solid $error-color !important;
+    }
+  }
+
+  .bootstrap-tagsinput {
+    width: 100%;
+    padding: $base-spacing/2;
+    .tag {
+      display: inline-block;
+      background-color: transparent;
+      color: $black-70;
+      &:before {
+        content: '#';
+      }
+      span[data-role="remove"] {
+        display: none;
+      }
+    }
+
+    .twitter-typeahead .tt-query,
+    .twitter-typeahead .tt-hint {
+      margin-bottom: 0;
+    }
+
+    .twitter-typeahead .tt-hint
+    {
+      display: none;
+    }
+
+    .tt-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      display: none;
+      float: left;
+      min-width: 160px;
+      padding: 5px 0;
+      margin: 2px 0 0;
+      list-style: none;
+      font-size: 14px;
+      background-color: #ffffff;
+      border: 1px solid #cccccc;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+      background-clip: padding-box;
+      cursor: pointer;
+    }
+
+    .tt-suggestion {
+      display: block;
+      padding: 3px 20px;
+      clear: both;
+      font-weight: normal;
+      line-height: 1.428571429;
+      color: #333333;
+      white-space: nowrap;
+    }
+
+    .tt-suggestion:hover,
+    .tt-suggestion:focus {
+      color: #ffffff;
+      text-decoration: none;
+      outline: 0;
+      background-color: #428bca;
+    }
+  }
+}

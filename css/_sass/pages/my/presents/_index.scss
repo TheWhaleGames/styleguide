@@ -1,0 +1,28 @@
+.my-presents {
+  .container--compact {
+    padding: 0 0.5em;
+  }
+  .presents__table {
+    font-size: em(14);
+    margin-bottom: em(40);
+    @include media($medium-screen-up) {
+      font-size: em(16);
+    }
+
+    .mobile {
+      display: none;
+      @include media($medium-screen-up) {
+        display: table-cell;
+      }
+    }
+
+    button:disabled {
+      border: solid 1px $black-38;
+      color: $black-38;
+      opacity: 1;
+    }
+    button:disabled:hover {
+      background-color: transparent;
+    }
+  }
+}

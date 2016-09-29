@@ -1,0 +1,242 @@
+.webtoon-card {
+  @extend %card;
+  position: relative;
+
+  .webtoon-card__thumb {
+    @include opacity_border;
+    @include aspect-ratio(7,5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $dark-gray;
+    box-sizing: border-box;
+  }
+  .webtoon-card__body {
+    padding: .5em;
+  }
+  .webtoon-card__name {
+    line-height: 0;
+    span {
+      @include ellipsis;
+      line-height: rem(20);
+      font-size: em(14);
+      color:  $black-87;
+    }
+  }
+  .webtoon-card__author{
+    line-height: 0;
+    span {
+      @include ellipsis;
+      font-size: em(12);
+      line-height: rem(16);
+      color: $black-54;
+    }
+  }
+  .webtoon-card__genre {
+    margin-top: em(12);
+    line-height: 0;
+    span {
+      @include ellipsis;
+      font-size: em(12);
+      line-height: rem(16);
+      color: $black-54;
+    }
+  }
+  .webtoon-card__rating {
+    span {
+      font-size: 12px;
+      color: transparentize(#000, 0.46);
+    }
+    span:before {
+      font-family: FontAwesome;
+      content: '\f005';
+      margin-right: .5em;
+      color: #ffd300;
+    }
+  }
+
+  .webtoon-card__label--new {
+    $new-label-color: #f62e6e;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    background-color: transparentize($new-label-color, .1);
+    color: white;
+  }
+
+  .webtoon-card__label--up {
+    background-image: url('/assets/images/icons/update_icon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    content : '';
+    position: absolute;
+    bottom: em(8);
+    right: em(8);
+    width: em(20);
+    height: em(14);
+  }
+
+  .webtoon-card__label--unpub {
+    content: '휴재';
+    margin: 0.4em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include round-label($medium-gray, .5em);
+  }
+}
+
+.webtoon-card--wide {
+  @extend %block_link;
+  @extend %card;
+  position: relative;
+
+  .webtoon-card__thumb {
+    @include span-columns(6);
+    @include media($medium-screen-up) {
+      @include span-columns(12);
+    }
+    @include opacity_border;
+    @include aspect-ratio(2,1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $dark-gray;
+    box-sizing: border-box;
+    transition: all $base-duration $base-timing;
+  }
+  .webtoon-card__body {
+    padding: em(8);
+    @include span-columns(6);
+    @include omega;
+    @include media($medium-screen-up) {
+      @include span-columns(12);
+      padding: em(8);
+    }
+  }
+  .webtoon-card__name {
+    line-height: 0;
+    span {
+      @include ellipsis;
+      font-size: em(16);
+      line-height: rem(20);
+      color: $black-87;
+    }
+  }
+  .webtoon-card__author{
+    line-height: 0;
+    span {
+      @include ellipsis;
+      font-size: em(14);
+      line-height: rem(20);
+      color: $black-54;
+    }
+  }
+  .webtoon-card__genre {
+    margin-top: 0;
+    @include media($medium-screen-up) {
+      margin-top: em(8);
+    }
+    line-height: 0;
+    span {
+      @include ellipsis;
+      color: $black-54;
+      line-height: rem(16);
+      font-size: em(12);
+    }
+  }
+
+
+  .webtoon-card__label--new {
+    $new-label-color: #f62e6e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    background-color: transparentize($new-label-color, .1);
+    color: white;
+    z-index: 1;
+  }
+  .webtoon-card__label--up {
+    background-image: url('/assets/images/icons/update_icon.svg');
+    background-repeat: no-repeat;
+    margin: 0.4em;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 24px;
+    height: 14px;
+    @include media($large-screen-up) {
+      width: 26px;
+      height: 14px;
+    }
+  }
+  &[data-unpub]:after {
+    @include round-label($medium-gray, .5em);
+    content: '휴재';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &[data-status="active"]:before {
+    $new-label-color: green;
+    position: absolute;
+    content: '공개';
+    top: 0;
+    left: 0;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    background-color: transparentize($new-label-color, .1);
+    color: white;
+  }
+
+  &[data-status="draft"]:before {
+    $new-label-color: #f62e6e;
+    position: absolute;
+    content: '비공개';
+    top: 0;
+    left: 0;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    background-color: transparentize($new-label-color, .1);
+    color: white;
+  }
+}
+
+.webtoon-card--new {
+  @extend %card;
+  @extend %block_link;
+  @extend .webtoon-card--wide;
+  border: 1px solid $black-10;
+  position: relative;
+
+  .webtoon-card__thumb {
+    @include span-columns(12);
+  }
+  .webtoon-card__body {
+    @include span-columns(12);
+  }
+  .webtoon-card__description {
+    color: $dark-text-color;
+    height: 3em;
+    font-size: .8em;
+    overflow: hidden;
+    margin-bottom: 1em;
+    span {
+      @include ellipsis;
+    }
+  }
+}
+
+.webtoon-card--border {
+  @extend .webtoon-card;
+  border: 1px solid $black-10;
+}

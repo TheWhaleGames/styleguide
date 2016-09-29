@@ -1,0 +1,54 @@
+@import "components/block_link";
+@import "components/round_label";
+@import "components/webtoon_card";
+@import "components/components_box";
+@import "components/lab";
+@import "components/item_card";
+@import "components/block_link";
+@import "components/episode_list_item";
+@import "components/pick_button";
+@import "components/bulk_purchase_modal";
+@import "components/bullet_tab";
+@import "components/collapse";
+@import "components/comments";
+@import "components/compact_comments";
+@import "components/components_box";
+@import "components/download_promotion_banner";
+@import "components/dropdown";
+@import "components/featured";
+@import "components/feed_category";
+@import "components/flash";
+@import "components/full_width_banner";
+@import "components/icons";
+@import "components/illust_card";
+@import "components/infinite";
+@import "components/label";
+@import "components/login_notice";
+@import "components/modal";
+@import "components/notices";
+@import "components/notifications";
+@import "components/page_controller";
+@import "components/rangeslider";
+@import "components/recommend_webtoons";
+@import "components/report_form";
+@import "components/search_bar";
+@import "components/session_menu";
+@import "components/share";
+@import "components/social";
+@import "components/spinner";
+@import "components/tags";
+@import "components/tags_carousel";
+@import "components/tooltip";
+@import "components/users_page";
+@import "components/wallets";
+@import "components/well";
+@import "components/youtube";
+
+.webtoon-wide-card__wrapper{
+    li {
+      padding: 0.25em .5em;
+      @include media($medium-screen-up) {
+        padding: .5em;
+      }
+    }
+  }

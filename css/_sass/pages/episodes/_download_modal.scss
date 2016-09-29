@@ -1,0 +1,59 @@
+.modal.download {
+  transition: all $base-duration $base-timing;
+  animation-name: bounceInDown;
+  animation-duration: .8s;
+
+  @keyframes bounceInDown {
+    from, 60%, 75%, 90%, to {
+      animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+    opacity: 0;
+      transform: translate3d(0, -3000px, 0);
+    }
+
+    60% {
+    opacity: 1;
+      transform: translate3d(0, 25px, 0);
+    }
+
+    75% {
+      transform: translate3d(0, -10px, 0);
+    }
+
+    90% {
+      transform: translate3d(0, 5px, 0);
+    }
+
+    to {
+      transform: none;
+    }
+  }
+
+  .modal-dialog {
+    margin-top: 3em;
+    padding-left: .5em;
+    padding-right: .5em;
+    @include media($medium-screen-up) {
+      margin-top: 3em;
+    }
+    text-align: center;
+    p {
+      color: $jiggs-purple;
+      font-size: 1.3em;
+      @include media($medium-screen-up) {
+        font-size: 2em;
+      }
+    }
+
+    .modal-header button:hover {
+    }
+    .download-promotion img {
+      width: 108px;
+      @include media($medium-screen-up) {
+        width: 216px;
+      }
+    }
+  }
+}

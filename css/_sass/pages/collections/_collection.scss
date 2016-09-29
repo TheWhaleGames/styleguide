@@ -1,0 +1,113 @@
+.collection + .collection {
+  margin: 1em 0;
+}
+.collection {
+  @extend %card;
+  position: relative;
+  overflow: hidden;
+
+  > a {
+    overflow: hidden;
+    display: block;
+    color: $base-font-color;
+  }
+
+  &[data-manage][data-status="unpublished"] {
+    .collection__title h1:before {
+      content: "\f023";
+      font-family: 'FontAwesome';
+      color: $light-text-color;
+      margin-right: .5em;
+    }
+  }
+
+  &[data-manage][data-status="published"] {
+    .collection__title h1:before {
+      content: "\f09c";
+      font-family: 'FontAwesome';
+      color: $light-text-color;
+      margin-right: .5em;
+    }
+  }
+
+  &[data-manage][data-status="published_to_web"] {
+    .collection__title h1:before {
+      content: "\f108";
+      font-family: 'FontAwesome';
+      color: $light-text-color;
+      margin-right: .5em;
+    }
+  }
+
+  .collection__manage {
+    position: absolute;
+    top: 1em;
+    right: 0;
+    display: none;
+    a {
+      background-color: white;
+      display: inline-block;
+      padding: $base-spacing/4 $base-spacing/2;
+      border: 1px solid $jiggs-purple;
+      border-radius: $base-border-radius;
+    }
+  }
+
+  &:hover .collection__manage {
+    display: block;
+  }
+
+  .collection__thumbnail {
+    max-width: 140px;
+    @include opacity-border;
+    @include aspect-ratio(140, 100);
+    @include span-columns(5);
+    @include media($medium-screen-up) {
+      @include span-columns(3);
+    }
+    @include media($large-screen-up) {
+      @include span-columns(3);
+    }
+    position: relative;
+    background-color: $dark-gray;
+    display: inline-block;
+    background-size: contain;
+  }
+  .collection__body {
+    @include span-columns(7);
+    @include media($medium-screen-up) {
+      @include span-columns(9);
+    }
+    @include media($large-screen-up) {
+      @include span-columns(9);
+    }
+    @include omega;
+    padding: .5em;
+    display: inline-block;
+  }
+  .collection__title {
+    h1 {
+      @include ellipsis;
+      margin: 0;
+      color: $dark-text-color;
+      @include media($large-screen-up) {
+        font-size: 1.2em;
+      }
+    }
+  }
+  .collection__created_at span {
+    @include ellipsis;
+    color: $light-text-color;
+    @include media($large-screen-up) {
+      font-size: em(12);
+    }
+  }
+  .collection__items_count {
+    color: $dark-text-color;
+    @include ellipsis;
+    @include media($large-screen-up) {
+      font-size: 1.25em;
+    }
+  }
+}
+

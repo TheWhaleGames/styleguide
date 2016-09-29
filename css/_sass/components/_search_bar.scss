@@ -1,0 +1,73 @@
+.search-bar {
+  .twitter-typeahead {
+  }
+
+  .tt-input {
+  }
+
+  .tt-query {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  }
+
+  .tt-hint {
+    color: $light-gray;
+    width: 100% !important;
+  }
+
+  .tt-menu {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 5px;
+    border: 1px solid $light-gray;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    background-color: white;
+
+    .search-result.empty {
+      color: $medium-gray;
+      padding: $base-spacing/2;
+    }
+    .search-result {
+      overflow: auto;
+      .thumbnail-wrapper {
+        img {
+          border: 1px solid $light-gray;
+          float: left;
+          width: 100px;
+          margin-right: 1em;
+        }
+        margin-right: $base-spacing;
+      }
+      .meta {
+        font-size: .9em;
+        .title {
+          @include ellipsis;
+          display: block;
+        }
+        .game {
+          color: $medium-gray;
+          @include ellipsis;
+          display: block;
+        }
+        .writer {
+          @include ellipsis;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .tt-suggestion {
+    padding: 10px;
+    margin: 4px auto;
+    background: white;
+  }
+
+  .tt-suggestion.tt-cursor {
+    background-color: $light-gray;
+    cursor: pointer;
+  }
+
+  .tt-suggestion p {
+    margin: 0;
+  }
+}

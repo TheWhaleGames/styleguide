@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'Spoqa Han Sans';
+  font-weight: 700;
+  src: local('SpoqaHanSans-Bold'), local('SpoqaHanSans-Bold'), url("/assets/fonts/SpoqaHanSans-Bold.eot");
+  src: url("/assets/fonts/SpoqaHanSans-Bold.eot?#iefix") format("embedded-opentype"),
+       url("/assets/fonts/SpoqaHanSans-Bold.woff") format("woff"),
+       url("/assets/fonts/SpoqaHanSans-Bold.ttf") format("truetype"),
+       url("/assets/fonts/SpoqaHanSans-Bold.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans';
+  font-weight: 400;
+  src: local('SpoqaHanSans-Regular'), local('SpoqaHanSans-Regular'), url("/assets/fonts/SpoqaHanSans-Regular.eot");
+  src: url("/assets/fonts/SpoqaHanSans-Regular.eot?#iefix") format("embedded-opentype"),
+       url("/assets/fonts/SpoqaHanSans-Regular.woff") format("woff"),
+       url("/assets/fonts/SpoqaHanSans-Regular.ttf") format("truetype"),
+       url("/assets/fonts/SpoqaHanSans-Regular.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans';
+  font-weight: 200;
+  src: local('SpoqaHanSans-Thin'), local('SpoqaHanSans-Thin'), url("/assets/fonts/SpoqaHanSans-Thin.eot");
+  src: url("/assets/fonts/SpoqaHanSans-Thin.eot?#iefix") format("embedded-opentype"),
+       url("/assets/fonts/SpoqaHanSans-Thin.woff") format("woff"),
+       url("/assets/fonts/SpoqaHanSans-Thin.ttf") format("truetype"),
+       url("/assets/fonts/SpoqaHanSans-Thin.svg") format("svg");
+}
+
+body {
+  color: $base-font-color;
+  font-family: 'Spoqa Han Sans';
+  font-feature-settings: "kern", "liga", "pnum";
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Spoqa Han Sans', $heading-font-family;
+  font-size: $base-font-size;
+  line-height: $heading-line-height;
+  margin: 0 0 $small-spacing;
+}
+
+p {
+  margin: 0 0 $small-spacing;
+}
+
+a {
+  color: $action-color;
+  text-decoration: none;
+  transition: color $base-duration $base-timing;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: shade($action-color, 25%);
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}

@@ -1,0 +1,44 @@
+.pick {
+  text-align: center;
+  .error {
+    @extend .flash-alert !optional;
+  }
+  .pick-button {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    color: $jiggs-purple;
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    border: none;
+    span:before {
+      display: block;
+      font-size: 2em;
+      font-family: 'bt-icons';
+      content: '\f10b';
+    }
+    &:hover {
+      color: $jiggs-purple;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .pick-button--picked {
+    color: $jiggs-purple;
+    span:before {
+      display: block;
+      font-size: 2em;
+      font-family: 'bt-icons';
+      content: '\f10c';
+    }
+  }
+  .pick-button[disabled] {
+    opacity: 1;
+    cursor: not-allowed;
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.fanarts-notices {
+  background-color: #efefef;
+  .container {
+    padding: .5em;
+  }
+}
+
+article.notice {
+  background-color: white;
+  max-width: 720px;
+  margin: $base-spacing auto $base-spacing auto;
+  padding: .5em;
+  @include media($medium-screen-up) {
+    padding: $base-spacing;
+  }
+
+  .notice__heading {
+    margin-bottom: 1em;
+    border-bottom: 1px solid $light-gray;
+  }
+  .notice__title {
+    font-size: 1.1em;
+    @include media($medium-screen-up) {
+      font-size: 1.5em;
+    }
+  }
+  .notice__created-at {
+    color: $light-text-color;
+  }
+}

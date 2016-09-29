@@ -1,0 +1,42 @@
+.webtoons.webtoons-index {
+  .week-table {
+    margin-bottom: 2em;
+    overflow: hidden;
+  }
+  .week-table ul {
+    padding: .25em;
+    position: relative;
+    .week-table__week-name {
+      text-align: center;
+    }
+
+    li.webtoon-list-item {
+      margin: .25em 0;
+    }
+    li.is-more ~li {
+      display: none;
+    }
+    li.is-more:after {
+      cursor: pointer;
+      font-size: .8em;
+      text-align: center;
+      margin-top: 0.5em;
+      display: block;
+      content: '더보기';
+      background-color: white;
+      width: 100%;
+      border-bottom: 2px solid #cccccc;
+    }
+
+    &[data-today] {
+      background-color: $jiggs-purple;
+      .week-table__week-name {
+        color: white;
+      }
+    }
+    &[data-today]:before {
+      background-color: $jiggs-purple;
+      color: white;
+    }
+  }
+}

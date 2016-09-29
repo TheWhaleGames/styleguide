@@ -1,0 +1,27 @@
+.webtoons.webtoons-index {
+  section#complete-list {
+    @include outer-container;
+    li {
+      border: 1px solid $light-gray;
+      margin-bottom: $base-spacing/2;
+      margin-top: $base-spacing/2;
+      @include span-columns(12);
+      @include omega(1n);
+      @include media($medium-screen) {
+        @include omega-reset(1n);
+        @include span-columns(4);
+        @include omega(3n);
+      }
+    }
+    .webtoon__thumb {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-bottom: 1px solid $light-gray;
+      @include aspect-ratio(2,1);
+      @include media($large-screen) {
+        @include aspect-ratio(2,1);
+      }
+    }
+  }
+}

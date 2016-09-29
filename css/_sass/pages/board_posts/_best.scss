@@ -1,0 +1,107 @@
+.featured-posts,
+.bests-container {
+  .best-post-item {
+    border-radius: .25em;
+    overflow: hidden;
+    padding: .5em;
+    position: relative;
+  }
+  .best-posts-thread {
+    @include outer-container;
+    text-align: center;
+  }
+  .best-posts-thread li {
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+  }
+  .best-post-item[data-board]:hover:after {
+    @include round-label(white, .9em);
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: attr(data-board);
+    color: white;
+    background-color: transparentize($dark-gray, .5);
+    margin: $base-spacing/2;
+  }
+
+  .thumbnail {
+    @include aspect-ratio(1,1);
+    @include opacity-border($border-radius: .25em);
+    border-radius: .25em;
+    overflow: hidden;
+    background-image: url(asset_path('text.png'));
+    background-color: $dark-gray;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(asset_path('gif.png'));
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .movie {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(asset_path('play.png'));
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .caption {
+    padding: $base-spacing/2;
+    position: absolute;
+    @include linear-gradient(transparent, $dark-gray);
+    color: white;
+    bottom: 0;
+    width: 100%;
+    .title {
+      @include ellipsis;
+      display: block;
+      font-size: 1em;
+      @include media($medium-screen-up) {
+        font-size: 1.2em;
+      }
+    }
+    .author {
+      @include ellipsis;
+      display: block;
+      opacity: .6;
+      font-size: .9em;
+      @include media($medium-screen-up) {
+        font-size: 1em;
+      }
+    }
+    .info {
+      opacity: .6;
+      font-size: .8em;
+    }
+    .created_at {
+      margin-right: 1em;
+    }
+    .pick_count {
+      margin-right: 1em;
+      &:before {
+        font-family: 'bt-icons';
+        content: '\f10b';
+        margin-right: .5em;
+      }
+    }
+    .comment_count {
+      &:before {
+        font-family: 'bt-icons';
+        content: '\f112';
+        margin-right: .5em;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.my-libraries-show {
+  .empty {
+    text-align: center;
+  }
+  .library__heading {
+    margin-top: em(24);
+    text-align: center;
+  }
+
+  .illust-user {
+    text-align: center;
+  }
+  .illust-user__avatar img {
+    border-radius: 50%;
+    width: em(80);
+    height: em(80);
+  }
+  .illust-user__name {
+    color: $black-87;
+  }
+}

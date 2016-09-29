@@ -1,0 +1,17 @@
+.collections.collections-edit {
+  #edit_collection_wrapper {
+    margin: 0 auto;
+    max-width: 720px;
+    h1 {
+      margin-top: $base-spacing;
+    }
+
+    img {
+      position: absolute;
+      z-index: -1;
+    }
+    .cropit-image-preview {
+      border: 1px solid $light-gray;
+    }
+  }
+}

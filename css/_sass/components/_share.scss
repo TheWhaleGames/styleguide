@@ -1,0 +1,63 @@
+ul.social-share--round {
+  text-align: center;
+  line-height: 0;
+  .social-share__item {
+    text-align: center;
+    width: em(32);
+    height: em(32);
+    display: inline-block;
+  }
+
+  .social-share__item + .social-share__item {
+    margin-left: em(8);
+  }
+
+  .social-share__item--kakaostory {
+    @extend .social-share__item;
+  }
+  .social-share__item--facebook {
+    @extend .social-share__item;
+  }
+  .social-share__item--twitter {
+    @extend .social-share__item;
+  }
+}
+
+ul.social-share {
+  $kakaostory-color: #efc031;
+  $twitter-color: #55acee;
+  $facebook-color: #3b5998;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+
+  .social-share__item {
+    transition: background-color $base-duration $base-timing;
+    display: table-cell;
+    text-align: center;
+    line-height: 0;
+    a {
+      display: inline-block;
+      width: 100%;
+      padding: em(4);
+    }
+  }
+  @mixin hover-blur($color, $opacity) {
+    &:hover {
+      background-color: transparentize($color, $opacity);
+      box-shadow: 0px 0px 4px 1px transparentize($color, $opacity);
+    }
+  }
+  .social-share__item--kakaostory {
+    @extend .social-share__item;
+    background-color: $kakaostory-color;
+  }
+  .social-share__item--facebook {
+    @extend .social-share__item;
+    background-color: $facebook-color;
+  }
+  .social-share__item--twitter {
+    @extend .social-share__item;
+    background-color: $twitter-color;
+  }
+}

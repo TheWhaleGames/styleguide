@@ -1,0 +1,32 @@
+.page__tags {
+  margin: 0 auto 5em auto;
+  max-width: 720px;
+
+  .page__tags-count {
+    text-align: center;
+    padding-top: 1em;
+    strong,
+    span {
+      color: $dark-text-color;
+      @include media($large-screen-up) {
+        font-size: 1.25em;
+      }
+    }
+  }
+  .page__more-tagged {
+    text-align: center;
+  }
+  li {
+    margin: $base-spacing/2;
+    display: inline-block;
+    @include media($large-screen-up) {
+      font-size: 1.4em;
+    }
+    a {
+      color: $dark-text-color;
+      &:hover {
+        color: $light-text-color;
+      }
+    }
+  }
+}

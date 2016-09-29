@@ -1,0 +1,487 @@
+// main header block
+.main-header {
+  $header-background: $lightest-gray;
+  $header-link-color: $base-font-color;
+  $header-height: 4em;
+
+  position: relative;
+  background-color: $header-background;
+  width: 100%;
+  z-index: 99;
+  overflow: visible;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+
+  .main-header-wrapper {
+    @include clearfix;
+    @include outer-container;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .logo {
+    float: left;
+    max-height: 2.75em;
+    padding-left: 1em;
+    @include media($large-screen-up) {
+      max-height: $header-height;
+      padding-left: 1em;
+      padding-right: 2em;
+    }
+
+    img {
+      max-height: 2.75em; 
+      padding: 0.5em 0;
+      @include media($large-screen) {
+        max-height: $header-height;
+        padding: 0.8em 0;
+      }
+    }
+  }
+
+  nav {
+    float: none;
+    min-height: $header-height;
+    z-index: 9999999;
+    line-height: 0;
+
+    @include media ($large-screen) {
+      float: left;
+    }
+  }
+
+  ul.navigation__menu {
+    clear: both;
+    display: table;
+    table-layout: fixed;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+    z-index: 9999;
+    line-height: 0;
+    text-align: center;
+    border-top: 1px solid $light-gray;
+    height: em(40);
+    @include media($large-screen-up) {
+      border: none;
+      display: inline;
+      margin: 0;
+      padding: 0;
+      height: em(64);
+    }
+  }
+  ul.navigation__menu.right {
+    float: right;
+  }
+
+  ul li.menu__item {
+    background: $header-background;
+    display: table-cell;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    z-index: 9999;
+    line-height: em(40);
+    @include media ($large-screen-up) {
+      background: transparent;
+      display: inline-block;
+      line-height: $header-height;
+      text-decoration: none;
+      width: auto;
+    }
+
+    a {
+      width: 100%;
+      position: relative;
+      color: $base-font-color;
+      display: inline-block;
+      text-decoration: none;
+      text-align: center;
+      font-size: em(14);
+
+      @include media ($medium-screen-up) {
+        padding-right: 1em;
+        padding-left: 1em;
+        font-size: em(16);
+      }
+
+      &:focus,
+      &:hover {
+        color: $light-gray;
+      }
+    }
+
+    &.active a {
+      color: $jiggs-purple;
+    }
+  }
+
+  .main-header__tools {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include media($large-screen) {
+      clear: none;
+      float: right;
+    }
+  }
+
+  .navigation-buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 2.75em;
+    @include media($large-screen) {
+      line-height: $header-height;
+    }
+    > div {
+      padding-right: $base-spacing/2;
+      padding-left: $base-spacing/2;
+    }
+    > div {
+      display: inline-block;
+    }
+    .search-button {
+      float: left;
+      padding: 0;
+      width: em(40);
+      height: em(44);
+      @include media($large-screen-up) {
+        width: em(60);
+        height: em(64);
+      }
+      background-image: url('/assets/images/search-icon.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      @include media($large-screen) {
+        display: none;
+      }
+      a {
+        display: inline-block;
+        width: em(40);
+        height: em(44);
+        @include media($large-screen-up) {
+          width: em(60);
+          height: em(64);
+        }
+        &:hover {
+          color: $jiggs-purple;
+        }
+      }
+      &.active {
+        background-color: $black-5;
+      }
+    }
+
+    .session-button {
+      width: em(40);
+      height: em(44);
+      @include media($large-screen-up) {
+        width: em(60);
+        height: em(64);
+      }
+      background-image: url('/assets/images/top-menu.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 0;
+      > a {
+        display: inline-block;
+        width: em(40);
+        height: em(44);
+        @include media($large-screen-up) {
+          width: em(60);
+          height: em(64);
+        }
+      }
+      &.active {
+        background-color: $black-5;
+      }
+    }
+    .session-button a {
+      color: $base-font-color;
+      opacity: 0.68;
+      &:hover {
+        color: $jiggs-purple;
+      }
+    }
+    .session-button--guest {
+      text-align: center;
+      width: em(80);
+      height: em(44);
+      @include media($large-screen-up) {
+        width: em(120);
+        height: em(64);
+      }
+      float: right;
+      padding: 0;
+      > a {
+        border: 1px solid $violet;
+        border-radius: em(4);
+        font-size: em(14);
+        padding: .5em 1em;
+        @include media($large-screen-up) {
+          padding: .5em 2em;
+        }
+      }
+      &.active > a {
+        background-color: $violet;
+        color: white;
+      }
+    }
+    .session-button.active a {
+      color: $jiggs-purple;
+    }
+  }
+
+  .search-bar {
+    .twitter-typeahead {
+      width: 100%;
+    }
+    display: none;
+    &.show {
+      display: block;
+    }
+    position: absolute;
+    width: 100%;
+    top: 2.75em;
+    height: 45px;
+    z-index: 9999;
+    @include media($large-screen) {
+      width: auto;
+      height: $header-height;
+      padding: 0.85em 0.85em 0.7em 0.6em;
+      position: absolute;
+      right: em(120);
+      top: 0;
+      display: block;
+    }
+
+    input[type='search'] {
+      appearance: none;
+      border-radius: 0;
+      box-sizing : border-box;
+      font-size: 0.9em;
+      margin: 0;
+      padding: 0.5em 0.8em;
+      width: 100%;
+      transition: all .5s ease;
+      background-color: white;
+      height: 45px;
+      @include media($large-screen) {
+        width: 15em;
+        height: auto;
+        border-radius: .25em;
+      }
+      &:focus {
+        @include media($large-screen) {
+          width: 20em;
+          background-color: white;
+        }
+      }
+    }
+
+    .twitter-typeahead:before {
+      display: none;
+      @include media($large-screen) {
+        display: block;
+      }
+      font-family: 'bt-icons';
+      position: absolute;
+      padding: 0.5em 0.2em 0.8em 0.5em;
+      font-size: 0.9em;
+      z-index: 1;
+      opacity: 0.38;
+      top: 0;
+      right: .5em;
+      content: '\f114';
+    }
+  }
+
+  div[data-react-class="Notifications"] {
+    padding: 0;
+  }
+
+  .session {
+    display: none;
+    &.show {
+      display: block;
+    }
+
+    form.session-form {
+      z-index: 9999;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+      background-color: white;
+      text-align: center;
+      padding: em(16);
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: -20px;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+        border-bottom: 10px solid white;
+        right: 30px;
+        @include media($large-screen-up) {
+          right: 50px;
+        }
+      }
+      label[for="session_name"], label[for="session_password"]{
+        text-align: left;
+        font-size: em(12);
+        color: $black-87;
+      }
+      label[for="session_password"] {
+        margin-top: 1.2em;
+      }
+      input#session_name,
+      input#session_password{
+        border: none;
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.06);
+      }
+      .signup, .forgot-password, .loginBtn {
+        margin: 0.6em 0;
+      }
+      .signup, .forgot-password {
+        font-size: em(12);
+      }
+      .remember_me_label {
+        font-size: em(14);
+        color: $black-54;
+        display: inline-block;
+        position: relative;
+        margin: 1.2em 0 0.6em;
+
+        input[type="checkbox"] {
+          margin: 0;
+          width: 1.5em;
+          height: 1.5em;
+          vertical-align: middle;
+          position: relative;
+          z-index: 10001;
+          opacity: 0;
+        }
+        .custom-checkbox {
+          margin: 0;
+          position: relative;
+          display: inline-block;
+        }
+        .custom-checkbox label {
+          margin: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 1.5em;
+          height: 1.5em;
+          background: white;
+          border: 1px solid $light-gray;
+          border-radius: 4px;
+        }
+        .custom-checkbox label:after {
+          opacity: 0.2;
+          content: '';
+          position: absolute;
+
+          top: 0;
+          left: 0;
+          width: 1.4em;
+          height: 1em;
+          border: 5px solid $jiggs-purple; 
+          border-top: none;
+          border-right: none;
+          background: transparent;
+          -ms-transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+        .custom-checkbox label:hover::after {
+          opacity: 0.5;
+        }
+        .custom-checkbox input[type="checkbox"]:checked + label:after {
+          opacity: 1;
+        }
+      }
+      .loginBtn {
+        width: rem(100);
+        font-size: em(12);
+        padding: em(6) em(16);
+      }
+    }
+    position: absolute;
+    top: 2.75em;
+    @include media(850px) {
+      top: 4em;
+    }
+    right: 0;
+    width: em(240);
+    height: 400px;
+    z-index: 9999;
+  }
+}
+
+.main-header.is-creator {
+  background-color: $violet;
+  .main-header__navigation {
+    width: 100%;
+  }
+  li.menu__item {
+    color: white;
+    a {
+      color: white;
+    }
+  }
+  .menu__item--greeting {
+    @extend li.menu__item;
+    padding-left: em(50);
+    &:before {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: '';
+      background-image: url('/assets/images/rio-hello.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: em(40);
+      height: em(50);
+    }
+    span {
+      color: white;
+      min-width: em(200);
+      padding: em(9);
+      border-radius: 4px;
+      background-color: rgba(254, 254, 254, 0.3);
+      position: relative;
+      &:before {
+        position: absolute;
+        content: '';
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-right: 10px solid rgba(254, 254, 254, 0.3);
+        left: -10px;
+        top: 50%;
+      }
+    }
+    span[data-hover] {
+      display: none;
+    }
+    &:hover span[data-hover] {
+      opacity: 1;
+      display: inline;
+    }
+    &:hover span {
+      opacity: 0;
+      display: none;
+    }
+    &:hover:before {
+      background-image: url('/assets/images/rio-logout.png');
+    }
+  }
+  ul.navigation__menu {
+    width: auto;
+  }
+}

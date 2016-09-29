@@ -1,0 +1,28 @@
+#edit_collection_wrapper,
+#new_collection_wrapper {
+  position: relative;
+  @include outer-container;
+  #collection-cropper {
+    max-width: 140px;
+    @include span-columns(3);
+  }
+  .collection__body {
+    @include span-columns(9);
+    @include omega;
+  }
+  .cropit-image-preview {
+    width: 140px;
+    height: 100px;
+    border: 1px solid $light-gray;
+    background-color: $black-10;
+  }
+  .cropit-image-preview.cropit-image-loaded {
+    cursor: pointer;
+  }
+  input#collection_title {
+    width: 100%;
+  }
+  input[type="submit"] {
+    float: right;
+  }
+}

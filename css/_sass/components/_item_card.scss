@@ -1,0 +1,54 @@
+.item--card {
+  @extend %card;
+  margin: $base-spacing/2 0 $base-spacing/2 0;
+  position: relative;
+  min-height: 16.25em;
+  a {
+    color: $dark-text-color;
+  }
+
+  .item__cover {
+    @include aspect-ratio(720, 400);
+    @include opacity-border;
+    background-size: cover;
+    background-position: top;
+    background-color: $dark-gray;
+  }
+  .item__content {
+    word-break: break-all;
+    word-wrap: break-word;
+    min-height: 7em;
+    padding: .5em;
+    h2 {
+      @include ellipsis;
+      margin-bottom: 0;
+    }
+    p {
+      font-size: .9em;
+    }
+  }
+
+  img.item__author-avatar {
+    float: left;
+    margin-right: 1em;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+  }
+
+  .item__info {
+    position: absolute;
+    width: 100%;
+    padding: .5em;
+    bottom: 0;
+    color: $light-text-color;
+    span {
+      line-height: 2em;
+    }
+    &:hover {
+      span {
+        color: $black-20;
+      }
+    }
+  }
+}

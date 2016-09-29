@@ -1,0 +1,24 @@
+.pop-appear {
+  opacity: 0.01;
+}
+.pop-appear.pop-appear-active {
+  opacity: 1;
+  transition: opacity $base-duration $base-timing;
+}
+.login-notice {
+  box-shadow: 0 1px 10px rgba(0,0,0,0.15);
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  .login-notice__login-button {
+    @extend button;
+    display: block;
+  }
+  .login-notice__signup-button {
+    margin-top: 1em;
+    text-align: center;
+    display: block;
+  }
+}
+

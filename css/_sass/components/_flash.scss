@@ -1,0 +1,54 @@
+@mixin flash($color) {
+  background: $color;
+  color: darken($color, 60);
+
+  a {
+    color: darken($color, 70);
+
+    &:hover {
+      color: darken($color, 90);
+    }
+  }
+}
+
+%flash-base {
+  font-weight: bold;
+  text-align: center;
+  /*margin-bottom: $base-spacing / 2;*/
+  padding: $base-spacing / 2;
+}
+
+.flash {
+  .flash__message {
+    @include outer-container;
+  }
+}
+
+.flash-alert {
+  @extend %flash-base;
+  @include flash($alert-color);
+}
+
+.flash-error {
+  @extend %flash-base;
+  @include flash($error-color);
+}
+.flash-success {
+  @extend %flash-base;
+  @include flash($success-color);
+}
+.flash-notice {
+  @extend %flash-base;
+  @include flash($notice-color);
+}
+
+.flash--toast {
+  padding: $base-spacing;
+  color: white;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 10em;
+  transform: translate(-50%, -50%);
+  background-color: $dark-text-color;
+}

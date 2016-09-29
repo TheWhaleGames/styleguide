@@ -1,0 +1,106 @@
+.challenge-webtoons.challenge-webtoons-index {
+  background-color: #efefef;
+
+  .webtoons__filter {
+    @extend %bottom_lined_tab;
+    ul {
+      max-width: em(400);
+    }
+  }
+
+  .featured {
+    .webtoon-card {
+      padding: .25em;
+      border-bottom: 0;
+    }
+    .webtoon-card__name {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1em;
+      color: $black-87;
+    }
+    .webtoon-card__author {
+      font-size: .875em;
+      text-align: center;
+      color: $black-54;
+    }
+    .webtoon-card__body {
+      border: none;
+    }
+  }
+  .headers {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    @include clearfix;
+    .notices-list {
+      padding: 0 1em;
+      @include span-columns(12);
+      @include media($large-screen-up) {
+        @include span-columns(8);
+      }
+    }
+    .new_challege {
+      display: none;
+      @include media($large-screen-up) {
+        @include span-columns(4);
+        @include omega;
+      }
+      a {
+        padding: $base-spacing/2;
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: white;
+        border: solid 1px $violet;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .webtoons {
+    padding: em(8);
+    position: relative;
+  }
+  .featured,
+  .webtoons {
+    .grid-item {
+      padding: .25em;
+    }
+  }
+  .event_banners {
+    .grid-item {
+      padding: 1em .25em;
+      img {
+        border-radius: em(4);
+      }
+    }
+  }
+  .webtoons__ordering {
+    @include media($large-screen-up) {
+      position: absolute;
+      right: 1em;
+      top: 0;
+    }
+    margin-top: 1em;
+    margin-bottom: .5em;
+    margin-left: .5em;
+    li {
+      display: inline-block;
+
+      span:before {
+        margin-right: .5em;
+        content: '';
+        background-image: url('/assets/images/icons/checkbox_empty.svg');
+        width: em(14);
+        height: em(14);
+        display: inline-block;
+      }
+      &.active span:before {
+        background-image: url('/assets/images/icons/checkbox_checked.svg');
+      }
+    }
+    li + li {
+      margin-left: 2em;
+    }
+  }
+}

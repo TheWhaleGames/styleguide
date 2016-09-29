@@ -1,0 +1,39 @@
+.popular-webtoons {
+  .popular-webtoon {
+    margin: $base-spacing/4;
+    border: none;
+  }
+  .card__image {
+    @include aspect-ratio(2,1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $dark-gray;
+    border: 1px solid transparentize($light-gray, .1);
+  }
+  .card__block {
+    padding-left: $base-spacing/2;
+    padding-right: $base-spacing/2;
+    background-color: #f5f5f5;
+    .title {
+      font-weight: bold;
+      color: $base-font-color;
+      @include ellipsis;
+      display: block;
+    }
+    .author {
+      font-weight: bold;
+      font-size: .9em;
+      color: $medium-gray;
+      @include ellipsis;
+      display: block;
+    }
+    .genre {
+      font-size: .8em;
+      color: $medium-gray;
+      @include ellipsis;
+      display: block;
+    }
+  }
+
+}

@@ -1,0 +1,106 @@
+.home.home-index {
+  .rank__wrapper {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    .heading h1 {
+      margin-bottom: 0.25em;
+    }
+    @include media($large-screen-up) {
+      overflow: hidden;
+    }
+  }
+  .ranking__wrapper {
+    @extend %card;
+    ul {
+      background-color: white;
+      @include media($large-screen-up) {
+        width: 100%;
+      }
+    }
+    li {
+      overflow: hidden;
+
+      @include media($large-screen-up) {
+        height: 80px;
+      }
+    }
+    li + li {
+      border-top: 1px solid $black-10;
+    }
+    li.is-more ~li {
+      display: none;
+    }
+    li:before {
+      float: left;
+      text-align: center;
+      counter-increment: rank;
+      content: counter(rank);
+      width: 20px;
+      font-size: em(16);
+      @include media($large-screen-up) {
+        width: 40px;
+        font-size: 1.25em;
+      }
+    }
+
+    ul {
+      counter-reset: rank;
+    }
+    .ranking__thumbnail {
+      @include aspect-ratio(280, 200);
+      @include opacity-border;
+      float: left;
+      background-size: contain;
+      background-color: $dark-gray;
+      width: 80px;
+      @include media($large-screen-up) {
+        width: 112px;
+        height: 80px;
+      }
+    }
+    .ranking__body {
+      float: left;
+      color: $base-font-color;
+      position: relative;
+      height: 100%;
+      padding: em(8) em(16);
+      @include media($large-screen-up) {
+        padding: em(8) em(16);
+      }
+    }
+    .ranking__name {
+      line-height: 0;
+      span {
+        line-height: rem(20);
+        font-size: em(16);
+        color: $black-87;
+        @include ellipsis;
+      }
+    }
+    .ranking__author {
+      line-height: 0;
+      span {
+        font-size: 0.875em;
+        color: $black-54;
+        font-size: em(14);
+        line-height: rem(24);
+        @include ellipsis;
+      }
+    }
+    .ranking__genre {
+      line-height: 0;
+      display: none;
+      @include media($large-screen-up) {
+        display: block;
+      }
+      span {
+        line-height: rem(20);
+        font-size: em(12);
+        color: $black-54;
+        @include ellipsis;
+      }
+    }
+  }
+}

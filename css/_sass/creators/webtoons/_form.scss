@@ -1,0 +1,116 @@
+.creators {
+  form .errors {
+    background-color: $sunflower-yellow;
+    border-radius: em(4);
+    padding: $base-spacing;
+  }
+  form .hint {
+    line-height: 1.7;
+    font-size: em(12);
+    color: $black-54;
+  }
+  .field_with_errors label {
+    background-color: $sunflower-yellow;
+    border-radius: em(4);
+  }
+  label.required:after {
+    content: '(필수)';
+    color: red;
+  }
+  .webtoon-form__thumbnail {
+    @include span-columns(6);
+    @include clearfix;
+    .thumbnail-preview {
+      @include aspect-ratio(280, 200);
+      background-color: $black-10;
+      background-size: contain;
+      @include span-columns(6);
+      .progress {
+        display: none;
+      }
+      &.process .progress {
+        z-index: 10;
+        display: block;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 30%;
+      }
+    }
+    .thumbnail-field {
+      @include span-columns(6);
+      @include omega;
+    }
+  }
+  .webtoon-form__publishing-scope {
+    @include span-columns(6);
+    @include omega;
+  }
+  .form__group {
+    @include clearfix;
+    margin-top: em(20);
+  }
+  .genres-group {
+    @include clearfix;
+    label {
+      @include span-columns(2);
+      @include omega(6n);
+    }
+  }
+  input[type=submit] {
+    display: block;
+    margin: 0 auto;
+    color: white;
+    line-height: 1.4;
+    font-size: 1em;
+    background-color: $violet;
+  }
+
+  .dropzone {
+    background-color: $black-5;
+    border-radius: 4px;
+    padding: $base-spacing;
+    color: $black-54;
+  }
+  .template-upload {
+    position: relative;
+    .preview canvas {
+      display: block;
+      margin: 0 auto;
+      opacity: .5;
+    }
+    .progress {
+      z-index: 10;
+      text-align: center;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      top: 30%;
+    }
+    button.start {
+      display: none;
+    }
+    button.deltet {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  .template-download {
+    position: relative;
+    .preview img {
+      display: block;
+      margin: 0 auto;
+    }
+    button.delete {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

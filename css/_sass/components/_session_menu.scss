@@ -1,0 +1,153 @@
+.session-menu {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+  background-color: white;
+  width: em(240);
+  &:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -20px;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid white;
+    right: 10px;
+    @include media($large-screen-up) {
+      right: 20px;
+    }
+  }
+}
+
+.session-menu__header {
+  border-bottom: 1px solid transparentize(#000, 0.8);
+  padding: em(12) em(16);
+  @include media($large-screen-up) {
+    padding: 0 em(16) em(12) em(16);
+  }
+}
+
+.session-menu__profile {
+  text-align: right;
+  display: none;
+  @include media($large-screen-up) {
+    display: block;
+  }
+  a {
+    text-decoration: underline;
+    font-size: em(12);
+    color: $black-38;
+  }
+}
+
+.session-menu__my-links {
+  padding: em(12) 0;
+  text-align: center;
+  li {
+    display: inline-block;
+    width: em(100);
+    height: em(32);
+    border: 1px solid red;
+    border-radius: em(4);
+  }
+  a {
+    font-size: em(12);
+    vertical-align: bottom;
+    display: inline-block;
+    width: 100%;
+  }
+  .session-menu__my-board {
+    border: 1px solid $violet;
+    a {
+      color: $violet;
+    }
+  }
+  .session-menu__my-account {
+    border: 1px solid $black-87;
+    a {
+      color: $black-87;
+    }
+  }
+}
+
+.session-menu__my-cash,
+.session-menu__my-coin {
+  padding: em(8) 0;
+  color: $black-87;
+  a {
+    color: $black-87;
+    float: right;
+    text-decoration: underline;
+    font-size: 12px;
+    display: inline-block;
+  }
+  form {
+    display: inline-block;
+    float: right;
+  }
+  button {
+    padding: 0;
+    border: 0;
+    color: $black-87;
+    text-decoration: underline;
+    font-size: 12px;
+  }
+  button:hover {
+    background-color: transparent;
+  }
+  .legend {
+    font-size: em(12);
+  }
+  .value {
+    font-weight: bold;
+    font-size: em(18);
+  }
+  .unit {
+    font-size: em(14);
+  }
+}
+
+.session-menu__body {
+  border-bottom: 1px solid transparentize(#000, 0.8);
+  padding: 0 em(8);
+}
+
+.session-menu__footer {
+  text-align: center;
+  padding: em(12);
+  a {
+    font-size: em(14);
+  }
+}
+
+.session-menu__item {
+  a {
+    display: block;
+    padding: em(16);
+  }
+}
+
+.session-menu__item + .session-menu__item {
+  border-top: 1px solid transparentize(#000, 0.8);
+}
+
+.session-menu__item a {
+  font-size: em(14);
+  color: $black-87;
+  &:hover {
+    color: $violet;
+  }
+}
+
+.session-menu__item .billing-form {
+  button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: em(14);
+    color: $black-87;
+    &:hover {
+      color: $violet;
+      background-color: transparent;
+    }
+  }
+}

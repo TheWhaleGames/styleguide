@@ -1,0 +1,101 @@
+.webtoons.webtoons-index {
+  background-color: #efefef;
+  section#banner {
+    @include outer-container;
+    .banner {
+      @include aspect-ratio(5, 1);
+      background-color: $jiggs-purple;
+    }
+  }
+
+  #scheduled, #complete, #popular {
+    @include media($large-screen-up) {
+      margin-bottom: .5em;
+      padding: .5em;
+    }
+    position: relative;
+  }
+
+  .webtoon-tabs {
+    margin-top: 1em;
+    @extend %bottom_lined_tab;
+    ul {
+      max-width: em(480);
+    }
+  }
+
+  #week-list .today-webtoons .tab-pane {
+    li {
+      padding: 0.25em .5em;
+      @include media($medium-screen-up) {
+        padding: .5em;
+      }
+    }
+  }
+
+  ul.scheduled-filter {
+    display: none;
+    @include media($large-screen-up) {
+      display: block;
+      position: absolute;
+      right: 0;
+    }
+    top: -3em;
+    li {
+      margin-right: 1em;
+      display: inline-block;
+      padding-left: 1em;
+      padding-right: 1em;
+
+      & span:before {
+        content: '';
+        margin-right: .5em;
+        vertical-align: middle;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        background-image: url('/assets/images/icons/checkbox_empty.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      a {
+        color: $medium-gray;
+        vertical-align: middle;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    li.active {
+      & span:before {
+        background-image: url('/assets/images/icons/checkbox_checked.svg');
+      }
+      a {
+        color: $jiggs-purple;
+      }
+
+    }
+  }
+  #complete, #popular, #paperback {
+    li {
+      padding: 0.25em;
+    }
+  }
+
+  #genre {
+    .genre {
+      margin-bottom: em(50);
+    }
+  }
+  .today-webtoons {
+    margin-bottom: em(50);
+  }
+
+  .paperback__all,
+  .paperback__new-arrival,
+  .trending-webtoons,
+  .new-arrivals,
+  .completed--total, {
+    margin-top: em(50);
+  }
+}

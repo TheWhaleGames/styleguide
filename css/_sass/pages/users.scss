@@ -1,0 +1,118 @@
+form.edit_user {
+  input[type='submit'] {
+    width: 100%;
+    margin-top: $base-spacing;
+    margin-bottom: $base-spacing;
+  }
+
+  .input {
+    margin: $base-spacing 0;
+  }
+  .hint {
+    color: $medium-gray;
+  }
+
+  .field_with_errors {
+    border: 1px solid $error-color;
+  }
+
+  span.error {
+    background-color: $error-color;
+    color: darken($error-color, 60%);
+  }
+
+
+  .error_notification {
+    text-align: center;
+    background-color: $error-color;
+    color: darken($error-color, 60%);
+    padding: .5em 2em;
+    margin-bottom: 1em;
+  }
+
+  .email-verification {
+    .email-verification__verified {
+      color: #009a56;
+    }
+    a {
+      @extend #{$all-buttons};
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .email-verification__message {
+    @extend .well--light-gray;
+    color: $medium-gray;
+    font-size: .8em;
+    padding: $base-spacing/2;
+    margin: $base-spacing/2 0;
+    li:before {
+      content: '* ';
+    }
+  }
+}
+
+.users-create,
+.users-new {
+  form {
+    background-color: white;
+    margin: $base-spacing;
+    padding: $base-spacing;
+    // @include media($large-screen-up) {
+    //   margin: $base-spacing*2;
+    //   padding: $base-spacing*2;
+    //   @include span-columns(8);
+    //   @include shift(2);
+    // }
+
+    input[type='submit'] {
+      width: 100%;
+      margin-top: $base-spacing;
+      margin-bottom: $base-spacing;
+    }
+
+    .input {
+      margin: $base-spacing 0;
+    }
+    .hint {
+      color: $medium-gray;
+    }
+
+    span.error {
+      background-color: $error-color;
+      color: darken($error-color, 60%);
+    }
+
+
+    .error_notification {
+      text-align: center;
+      background-color: $error-color;
+      color: darken($error-color, 60%);
+      padding: .5em 2em;
+      margin-bottom: 1em;
+    }
+
+    .email-verification {
+      .email-verification__verified {
+        color: #009a56;
+      }
+      a {
+        @extend #{$all-buttons};
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .email-verification__message {
+      @extend .well--light-gray;
+      color: $medium-gray;
+      font-size: .8em;
+      padding: $base-spacing/2;
+      margin: $base-spacing/2 0;
+      li:before {
+        content: '* ';
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.i-want-you {
+  @include media($medium-screen-up) {
+    @include span-columns(8);
+    @include shift(2);
+  }
+
+  padding: 2em;
+  text-align: center;
+  h1 {
+    font-size: 1.4em;
+  }
+  p.message {
+    text-align: center;
+    font-size: 1.2em;
+  }
+  .i-want-you {
+  }
+  em {
+    font-weight: bold;
+  }
+  a.contact {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+}

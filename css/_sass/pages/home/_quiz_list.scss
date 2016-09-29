@@ -1,0 +1,11 @@
+.quiz-list__wrapper {
+  @extend %horizontal_list;
+
+  li {
+    padding: 0.25em;
+    width: em(180);
+    @include media($large-screen-up) {
+      width: (100%/5);
+    }
+  }
+}

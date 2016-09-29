@@ -1,0 +1,124 @@
+.home-index {
+  .swiper-button-next {
+    display: none;
+    width: 44px;
+    height: 44px;
+    background-image: url(asset_path('swiper-button-next.png'));
+    background-size: contain;
+    @include media($medium-screen-up) {
+      display: block;
+    }
+  }
+  .swiper-button-prev {
+    display: none;
+    width: 44px;
+    height: 44px;
+    background-image: url(asset_path('swiper-button-prev.png'));
+    background-size: contain;
+    @include media($medium-screen-up) {
+      display: block;
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background-color: $violet;
+    width: 16px;
+    border-radius: 4px;
+  }
+  .swiper-slide {
+    position: relative;
+    max-width: $max-width;
+    text-align: center;
+    background-color: white;
+    img {
+      float: right;
+    }
+  }
+  .swiper-left-mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: $max-width;
+    z-index: 10;
+    left: 50%;
+    margin-left: -($max-width/2+$max-width);
+    background-color: transparentize(#000, 0.2);
+  }
+  .swiper-right-mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: $max-width;
+    z-index: 10;
+    right: 50%;
+    margin-right: -($max-width/2+$max-width);
+    background-color: transparentize(#000, 0.2);
+  }
+  .swiper-slide__body {
+    position: absolute;
+    bottom: em(22);
+    left: em(10);
+    text-align: left;
+    color: $black-87;
+    a {
+      color: $black-87;
+    }
+    @include media($large-screen-up) {
+      bottom: em(44);
+      left: em(20);
+    }
+  }
+  .swiper-slide__label {
+    span {
+      background-color: $violet;
+      color: white;
+      border-radius: rem(20);
+      font-size: em(11);
+      padding: 0.2em 0.5em;
+      font-weight: 100;
+      @include media($large-screen-up) {
+        font-size: em(22);
+      }
+    }
+  }
+  .swiper-slide__label--new_arrival {
+    @extend .swiper-slide__label;
+    span {
+      background-color: $reddish-pink;
+
+    }
+  }
+  .swiper-slide__label--recommended {
+    @extend .swiper-slide__label;
+    span {
+      background-color: $violet;
+    }
+  }
+  .swiper-slide__label--event {
+    @extend .swiper-slide__label;
+    span {
+      background-color: $sunflower-yellow;
+      color: $black-54;
+    }
+  }
+  .swiper-slide__title {
+    margin-bottom: 0.5em;
+    span {
+      font-size: em(20);
+      font-weight: bold;
+      @include media($large-screen-up) {
+        font-size: em(40);
+      }
+    }
+  }
+  .swiper-slide__summary {
+    width: em(422);
+    p {
+      line-height: 1.2;
+      font-size: em(13);
+      font-weight: 100;
+      @include media($large-screen-up) {
+        font-size: em(26);
+      }
+    }
+  }
+}

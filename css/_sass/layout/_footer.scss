@@ -1,0 +1,89 @@
+.footer {
+  $footer-background: #2f2f2f;
+  $footer-color: transparentize(#FFF, 0.7);
+  $footer-link-color: transparentize(#FFF, 0.5);
+  $footer-disclaimer-color: transparentize($footer-color, .6);
+  margin-top: 1.25em;
+  background-color: $footer-background;
+  color: $footer-color;
+  text-align: center;
+  @include media($medium-screen-up) {
+    font-size: .9em;
+  }
+  a {
+    color: $footer-link-color;
+  }
+  .footer-wrapper {
+    padding: 1em;
+    @include outer-container;
+    @include media($medium-screen-up) {
+      padding-top: 2.2em;
+      padding-bottom: 2em;
+    }
+  }
+  .footer__links {
+    display: none;
+    margin-bottom: 2em;
+    font-size: 14px;
+    @include media($medium-screen-up) {
+      display: block;
+    }
+    li {
+      display: inline-block;
+    }
+
+    li + li {
+      margin-left: 1.5em;
+      &:before {
+        content: '|';
+        margin-right: 1.5em;
+      }
+    }
+  }
+  .footer__app-links {
+    margin-bottom: 1em;
+    @include media($medium-screen-up) {
+      margin-bottom: 2em;
+    }
+    li {
+      display: inline-block;
+    }
+    li + li {
+      margin-left: .5em;
+      @include media($medium-screen-up) {
+        margin-left: 2em;
+      }
+    }
+    a {
+      max-width: 80px;
+      @include media($medium-screen-up) {
+        max-width: 120px;
+      }
+      display: inline-block;
+      padding: .25em;
+      line-height: 0;
+      border: 1px solid $footer-color;
+      border-radius: .75em;
+      &:hover {
+        background-color: $footer-color;
+      }
+    }
+  }
+  .footer__company {
+    font-size: .4em;
+    @include media($medium-screen-up) {
+      font-size: .9em;
+      display: block;
+    }
+    span + span {
+      margin-left: 1em;
+      @include media($medium-screen-up) {
+        margin-left: 2em;
+      }
+    }
+  }
+
+  .privacy {
+    font-weight: bold;
+  }
+}

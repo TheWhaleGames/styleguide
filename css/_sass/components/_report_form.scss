@@ -1,0 +1,44 @@
+.content-report {
+  .content-report__button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+  .content-report__button:hover {
+    background: transparent;
+  }
+  .content-report__modal {
+    text-align: left;
+
+    .modal-dialog {
+      width: 22em;
+      padding-top: 0;
+      padding-bottom: 0;
+      @include media($medium-screen-up) {
+        padding-top: 2em;
+        padding-bottom: 2em;
+      }
+    }
+    .modal-header {
+      overflow: hidden;
+    }
+    .modal-header button {
+      padding: .2em 1em;
+      border: none;
+      float: right;
+    }
+    .modal-content {
+      @include media($medium-screen-up) {
+        padding: 1em;
+      }
+    }
+    .modal-footer {
+      margin-top: 1em;
+      button {
+        padding: .2em 1em;
+        border: none;
+      }
+    }
+  }
+}

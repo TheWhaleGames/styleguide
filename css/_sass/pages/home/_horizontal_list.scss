@@ -1,0 +1,25 @@
+%horizontal_list {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  ul {
+    @include clearfix;
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: top;
+
+    @include media($large-screen-up) {
+      display: block;
+      overflow: hidden;
+    }
+    li {
+      display: inline-block;
+      vertical-align: top;
+      white-space: normal;
+      @include media($large-screen-up) {
+        display: block;
+        float: left;
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import "header";
+@import "viewer_header";
+@import "footer";
+@import "viewer_footer";
+@import "navigation";
+
+$footer-height: 16em;
+$footer-mobile-height: 8.5em;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #efefef;
+  margin-bottom: $footer-mobile-height;
+  @include media($medium-screen) {
+    margin-bottom: $footer-height - 1.5em;
+  }
+}
+
+.container {
+  @include outer-container;
+  @include clearfix;
+  padding-bottom: 2em;
+}
+
+.container--compact {
+  @include outer-container;
+  @include clearfix;
+  padding-bottom: 2em;
+  max-width: em(720);
+}
+
+.container--compact__heading {
+  text-align: center;
+  font-size: em(18);
+  color: $black-87;
+  margin-top: rem(24);
+  margin-bottom: rem(16);
+}
+
+footer.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: $footer-mobile-height;
+  @include media($medium-screen) {
+    height: $footer-height;
+  }
+}

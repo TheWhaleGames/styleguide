@@ -1,0 +1,27 @@
+.post-navigation-wrapper {
+  @extend %bottom_lined_tab;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  ul {
+    max-width: em(600);
+  }
+
+  li.beta:after {
+    position: absolute;
+    content: '';
+    background-image: url('/assets/images/beta_purple.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 10px;
+    @include media($medium-screen-up) {
+      width: 40px;
+      height: 20px;
+    }
+  }
+  li.active.beta:after {
+    background-image: url('/assets/images/beta_purple.png');
+  }
+}

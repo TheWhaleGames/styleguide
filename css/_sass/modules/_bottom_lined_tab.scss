@@ -1,0 +1,32 @@
+%bottom_lined_tab {
+  margin-bottom: 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  ul {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    overflow: hidden;
+    li {
+      position: relative;
+      height: 2.5em;
+      line-height: 2.5em;
+      display: table-cell;
+      text-align: center;
+
+      a {
+        display: inline-block;
+        width: 100%;
+        color: transparentize(#000, .67);
+      }
+
+      &.active {
+        border-bottom: 4px solid $violet;
+        a {
+          color: $violet;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.board_posts {
+  .post-item[data-notice] {
+    background-color: lighten($light-gray, 10%);
+    .title:before {
+      content: '공지';
+      margin-right: $base-spacing/4;
+      border: 1px solid $jiggs-green;
+      color: $jiggs-green;
+      border-radius: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      font-size: .8em;
+    }
+  }
+  .post-item[data-image] .title:after{
+    font-family: 'bt-icons';
+    content: '\f110';
+    color: #37b7c0;
+  }
+  .post-item[data-best] .title:before {
+    content: 'BEST';
+    margin-right: $base-spacing/4;
+    border: 1px solid $jiggs-purple;
+    color: $jiggs-purple;
+    border-radius: 1em;
+    padding-left: .5em;
+    padding-right: .5em;
+    font-size: .8em;
+  }
+  .post-item {
+    @include outer-container;
+    padding: $base-spacing/2;
+    border-bottom: 1px solid $light-gray;
+    .title {
+      @include ellipsis;
+      display: block;
+      color: $base-font-color;
+      .comment_count {
+        color: $jiggs-purple;
+      }
+    }
+    .meta {
+      @include ellipsis;
+      display: block;
+      color: $medium-gray;
+      font-size: 0.9em;
+      span {
+        @include media($medium-screen-up) {
+          margin-right: $base-spacing/3;
+        }
+        img {
+          display: inline;
+          width: .9em;
+          height: .9em;
+        }
+      }
+      span:after {
+        content: '|';
+        padding-left: $base-spacing/3;
+      }
+      span:last-child:after {
+        content: '';
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.grid {
+  @include clearfix;
+  @mixin grid-item-columns($columns) {
+    width: (100% / 12) * $columns;
+  }
+  .grid-item {
+    float: left;
+    display: block;
+    @for $i from 1 through 12 {
+      &[data-columns-small="#{$i}"] {
+        @include grid-item-columns(12/$i);
+      }
+      &[data-columns-medium="#{$i}"] {
+        @include media($medium-screen) {
+          @include grid-item-columns(12/$i);
+        }
+      }
+      &[data-columns-large="#{$i}"] {
+        @include media($large-screen) {
+          @include grid-item-columns(12/$i);
+        }
+      }
+    }
+  }
+}
+
+.grid--padded {
+  @extend .grid;
+
+  .grid-item {
+    padding: em(4);
+  }
+}
+
+.grid--expandable {
+  @extend .grid;
+  @include media($large-screen-up) {
+    li.is-more {
+      position: relative;
+    }
+    li.is-more ~li {
+      display: none;
+    }
+    li.is-more .webtoon-card:after {
+      pointer-events: none;
+      z-index: 99;
+      color: white;
+      position: absolute;
+      content: '';
+      background-color: rgba(0,0,0,0.5);
+      background-image: url('/assets/images/icons/icon-more.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}

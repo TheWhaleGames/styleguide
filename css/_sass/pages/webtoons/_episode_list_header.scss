@@ -1,0 +1,26 @@
+.episodes-list__header {
+  position: relative;
+  padding: 1em 0;
+}
+
+.episodes-list__count {
+  color: $black-54;
+}
+
+.episodes-list__sort {
+  position: absolute;
+  top: 1em;
+  right: 0;
+
+  button {
+    border: none;
+    padding: 0;
+  }
+  button:hover {
+    color: $violet;
+    background-color: transparent;
+  }
+  button:focus {
+    outline: none;
+  }
+}

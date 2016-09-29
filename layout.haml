@@ -1,0 +1,8 @@
+---
+layout: default
+title: layout
+---
+.container.home.home-index
+  %br
+  %h1 레이아웃은 이러쿵 저러쿵~~
+  {% capture grid %}{% haml grid.haml %}{% endcapture %}{{ grid | strip_newlines }}

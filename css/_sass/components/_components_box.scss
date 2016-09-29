@@ -1,0 +1,8 @@
+.components_box{
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: $base-border-radius;
+  .components_box_upper{
+    border-bottom: 1px solid rgba(0,0,0,0.15); 
+  }
+  margin: 2em 0;
+}

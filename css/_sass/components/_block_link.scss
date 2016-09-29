@@ -1,0 +1,16 @@
+%block_link {
+  $hover-color: lighten($light-gray, 10);
+  transition: all .1s ease-in;
+  &:hover {
+    background-color: $hover-color;
+  }
+  &:active {
+    background-color: darken($hover-color, 5);
+  }
+
+  a {
+    overflow: hidden;
+    display: block;
+  }
+}
+

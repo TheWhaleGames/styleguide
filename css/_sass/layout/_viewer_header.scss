@@ -1,0 +1,155 @@
+// Navigation
+
+$navigation-height: 60px;
+$navigation-padding: 1em;
+$navigation-background: transparentize(white, 0.02);
+$navigation-color: $dark-gray;
+$navigation-color-hover: white;
+
+@mixin button-icon() {
+  content: '';
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: rem(24);
+  margin-bottom: rem(4);
+}
+
+body.modal-open {
+  header.viewer-navigation.active {
+    z-index: 0;
+  }
+}
+
+header.viewer-navigation {
+  @include position(fixed, 0 0 null 0);
+  cursor: auto;
+  height: $navigation-height;
+  color: $navigation-color;
+  background-color: $navigation-background;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.15);
+
+  transition: transform 200ms linear;
+  transform: translateY(-200%);
+  &.active {
+    transform: translateY(0%);
+    z-index: 101;
+  }
+  .navigation__logo {
+    padding: .6em;
+    float: left;
+    max-height: $navigation-height;
+    width: $navigation-height;
+    text-align: center;
+    &:hover {
+      background-color: lighten($jiggs-purple, 10%);
+    }
+  }
+
+  .navigation__title {
+    padding-left: 1em;
+    height: 60px;
+    line-height: 60px;
+    @include ellipsis;
+    display: inline;
+    @include media($medium-screen-up) {
+      float: left;
+      display: inline-block;
+    }
+    a {
+      color: $base-font-color;
+    }
+    .title__webtoon {
+      &:after {
+        content: "-";
+      }
+    }
+    .title__episode {
+      font-weight: bold;
+    }
+  }
+  .navigation__button-group-toggle {
+    display: block;
+    float: right;
+    @include media($medium-screen-up) {
+      display: none;
+    }
+    border-radius: 0;
+    border: 0;
+    padding: 0;
+    height: $navigation-height;
+    width: $navigation-height;
+    color: $black-87;
+    &:hover {
+      background-color: transparent;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .navigation__button-group {
+    background: white;
+    display: none;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+    @include media($medium-screen-up) {
+      display: block;
+      float: right;
+      box-shadow: none;
+    }
+  }
+  .navigation__button-group.active{
+    display: block;
+  }
+  .navigation__button {
+    height: $navigation-height;
+    width: $navigation-height;
+    display: inline-block;
+    input[type='submit'],
+    button {
+      border: 0;
+      padding: 0;
+      height: $navigation-height;
+      width: $navigation-height;
+      border-radius: 0;
+      font-size: em(10);
+      color: $black-87;
+    }
+    input[type='submit']:hover,
+    button:hover {
+      background-color: #d8d8d8;
+    }
+  }
+
+  .navigation__button {
+    .js-set-notification:before {
+      @include button-icon();
+      background-image: url(asset-path('icons/viewer-notification.svg'));
+    }
+    .js-set-notification.active {
+      color: $jiggs-purple;
+    }
+    .js-set-notification.active:before {
+      @include button-icon();
+      background-image: url(asset-path('alarm-icon-active.svg'));
+    }
+    .js-toggle-share:before {
+      @include button-icon();
+      background-image: url(asset-path('icons/viewer-share.svg'));
+    }
+  }
+}
+
+body[data-direction="ttb"] {
+  .js-toggle-direction:before {
+    @include button-icon();
+    background-image: url(asset-path('icons/viewer-vertical.svg'));
+  }
+}
+body[data-direction="rtl"],
+body[data-direction="ltr"] {
+  .js-toggle-direction:before {
+    @include button-icon();
+    background-image: url(asset-path('icons/viewer-horizontal.svg'));
+  }
+}

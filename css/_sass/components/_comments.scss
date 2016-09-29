@@ -1,0 +1,282 @@
+// comment form
+.comments .comment-form {
+  .input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .input-group-button {
+    position: relative;
+    width: 1%;
+    vertical-align: middle;
+    display: table-cell;
+  }
+  input[name='comment'] {
+    appearance: none;
+    position: relative;
+    display: table-cell;
+    width: 100%;
+    float: left;
+    margin-bottom: 0;
+    border-radius: 0;
+    height: 3em;
+  }
+
+  button[type='submit'] {
+    border: none;
+    &:disabled {
+      background-color: $medium-gray;
+      color: white;
+    }
+    height: 3em;
+    position: relative;
+    background-color: $jiggs-purple;
+    display: inline-block;
+    font-size: $base-font-size;
+    color: white;
+    border-radius: 0;
+    margin: 0;
+    padding: 0 1em;
+    text-align: center;
+  }
+}
+// Comment List
+.comments {
+  background-color: white;
+  .errors {
+    border-radius: $base-border-radius;
+    margin-bottom: $base-spacing/2;
+    padding: $base-spacing/2;
+    background-color: $error-color;
+    color: darken($error-color, 60%);
+  }
+
+  .button-group {
+    $base-border-color: gainsboro !default;
+    $base-border-radius: 3px !default;
+    $base-line-height: 1.5em !default;
+    $base-spacing: 1.5em !default;
+    $base-font-size: 1em !default;
+    $base-background-color: transparent !default;
+    $dark-gray: #333 !default;
+    $large-screen: em(860) !default;
+    $base-font-color: $dark-gray !default;
+    $button-group-background: $base-background-color;
+    $button-group-color: lighten($base-font-color, 30%);
+    $button-group-border: none;
+    $button-group-inner-border: none;
+    $button-group-background-checked: transparent;
+    $button-group-color-checked: $jiggs-purple;
+    $button-group-border-checked: darken($button-group-background-checked, 15%);
+    display: block;
+    @include clearfix;
+    input {
+      display: none;
+    }
+    label {
+      margin-bottom: 0;
+      float: left;
+      .button-group-item {
+        background: $button-group-background;
+        border-left: $button-group-border;
+        border-radius: 0;
+        border-right: $button-group-border;
+        color: $button-group-color;
+        cursor: pointer;
+        display: inline-block;
+        font-size: $base-font-size;
+        font-weight: normal;
+        line-height: 1;
+        padding: 0.75em 1em;
+        width: 100%;
+
+        border-bottom: $button-group-border;
+        border-left: 0;
+        border-right: $button-group-inner-border;
+        border-top: $button-group-border;
+        width: auto;
+        &:focus,
+        &:hover {
+          background-color: darken($button-group-background, 3%);
+        }
+      }
+      &:first-child .button-group-item {
+        border-bottom-left-radius: $base-border-radius;
+        border-left: $button-group-border;
+        border-top-left-radius: $base-border-radius;
+        border-top-right-radius: 0;
+      }
+      &:last-child .button-group-item {
+        border-bottom-right-radius: $base-border-radius;
+        border-right: $button-group-border;
+        border-top-right-radius: $base-border-radius;
+        border-top-left-radius: 0;
+      }
+    }
+
+    input:checked + .button-group-item {
+      background: $button-group-background-checked;
+      border: 1px solid $button-group-border-checked;
+      box-shadow: inset 0 1px 2px darken($button-group-background-checked, 10%);
+      color: $button-group-color-checked;
+    }
+  }
+
+  .comments__load-more {
+    color: $jiggs-purple;
+    margin: 1em auto;
+    display: block;
+    text-align: center;
+    width: 90%;
+    @include media($medium-screen-up) {
+      width: 50%;
+    }
+
+    &:focus,
+    &:hover {
+      color: white;
+      outline: 0 !important;
+    }
+    &:focus {
+      background-color: transparent;
+      color: $jiggs-purple;
+    }
+  }
+  .comments__load-more--disabled {
+    @extend .comments__load-more;
+    background-color: lighten($jiggs-purple, 10%);
+  }
+
+  // Comment item
+  .comment {
+    @mixin button($background-color, $color) {
+      padding: 4px;
+      border-radius: $base-border-radius;
+      background-color: $background-color;
+      color: $color;
+    }
+
+    $comment-color: $base-font-color;
+
+    padding: $base-spacing/2;
+    border-bottom: 1px solid transparentize($comment-color, .9);
+    .comment__info {
+      // margin-bottom: .5em;
+
+      .comment__label--best {
+        color: white;
+        border-radius: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+        background-color: $jiggs-purple;
+        margin-right: $base-spacing/4;
+      }
+
+      .comment__author {
+        color: $jiggs-purple;
+        img.comment__author-icon {
+          display: inline;
+          width: .9em;
+          height: .9em;
+          margin-right: .3em;
+        }
+      }
+      .comment__welcome {
+        color: $jiggs-green;
+        font-size: .5em;
+        margin-left: .5em;
+      }
+      .comment__flag {
+        display: none;
+        float: right;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        background-color: transparent;
+        color: $light-gray;
+
+        &:hover {
+          color: $medium-gray;
+        }
+      }
+    }
+
+    .comment__body {
+      word-wrap: break-word;
+    }
+
+    footer {
+      overflow: hidden;
+      .comment__date {
+        color: $medium-gray;
+      }
+      ul {
+        display: block;
+        overflow: hidden;
+        float: right;
+      }
+      li {
+        margin-left: $base-spacing;
+        float: left;
+        display: inline-block;
+      }
+      button {
+        color: $medium-gray;
+        border: none;
+        padding: 0;
+      }
+      button.picked {
+        color: $violet;
+      }
+      button.banned {
+        color: $violet;
+      }
+      button:focus,
+      button:hover {
+        color: $jiggs-purple;
+        background-color: transparent;
+      }
+      button:focus {
+        outline: none;
+      }
+      .comment__delete {
+        @include button($medium-gray, white);
+      }
+    }
+
+    .contents {
+      display: table-cell;
+      vertical-align: top;
+
+      width: 100%;
+
+      h1.author {
+        font-size: 1em;
+        margin-bottom: .5em;
+        color: darken($jiggs-green, 20%);
+      }
+
+      p {
+        margin-bottom: .5em;
+      }
+
+      p.date {
+        font-style: italic;
+        font-size: .9em;
+        color: gray;
+      }
+    }
+
+    .pick {
+      button {
+        background-color: transparent;
+        &:hover {
+          color: gray;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,60 @@
+.tags-carousel {
+  background-color: white;
+  position: relative;
+
+  button {
+    border: none;
+    border-radius: 0;
+    &:focus {
+      background-color: transparent;
+      outline: none;
+    }
+    &:hover {
+      background-color: transparentize($violet, .9);
+      outline: none;
+      color: white;
+    }
+  }
+  button.js-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 3em;
+    background-image: url('/assets/images/previous.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  button.js-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 3em;
+    background-image: url('/assets/images/next.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &.scroll {
+    ul {
+      white-space: nowrap;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      margin: 0 em(48);
+      height: em(48);
+      line-height: em(48);
+    }
+  }
+  li {
+    display: inline-block;
+    a {
+      font-size: em(16);
+      @include media($large-screen-up) {
+        font-size: em(20);
+      }
+      color: $jiggs-purple;
+      padding: 0 .5em;
+      &:before {
+        content: '#';
+      }
+    }
+  }
+}

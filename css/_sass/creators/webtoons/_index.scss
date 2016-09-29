@@ -1,0 +1,31 @@
+.creators-webtoons-index {
+  .challenge-webtoons {
+    position: relative;
+    background-color: transparent;
+    .webtoon-card {
+      margin: .25em;
+    }
+  }
+  .challenge-webtoons__actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    a.button {
+      background-color: white;
+      &:hover {
+        color: $violet;
+        background-color: $black-5;
+      }
+    }
+  }
+  .webtoon-card[data-publishing="draft"]:after {
+    position: absolute;
+    content: '비공개';
+    top: 0;
+    right: 0;
+    background-color: $black-54;
+    color: white;
+    padding: em(8);
+    font-size: em(14);
+  }
+}

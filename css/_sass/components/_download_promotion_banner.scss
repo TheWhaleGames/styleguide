@@ -1,0 +1,119 @@
+body {
+  // transition: all $base-duration $base-timing;
+}
+body.banner-on {
+  margin-top: 60px;
+  @include media($medium-screen-up) {
+    margin-top: 0;
+  }
+}
+#download-banner {
+  @include media($medium-screen) {
+    display: none;
+  }
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  display: none;
+  background-color: $dark-gray;
+  body.banner-on & {
+    display: block;
+    @include media($medium-screen-up) {
+      display: none;
+    }
+  }
+  .banner-wrapper {
+    position: relative;
+    height: 60px;
+    color: white;
+    padding: 0 4px;
+    @include outer-container;
+    a.download-link {
+      background-color: $dark-gray;
+      color: white;
+      font-size: .8em;
+      border: 1px solid white;
+      border-radius: 4px;
+      padding: 4px 8px;
+      margin: 14px 6px;
+      position: absolute;
+      right: 0;
+    }
+    img.app-icon {
+      margin: 8px 2px;
+      max-height: 44px;
+      float: left;
+    }
+    .rating {
+      color: $jiggs-yellow;
+      font-size: .6em;
+    }
+    .title-label {
+      margin-top: 4px;
+      display: inline-block;
+      float: left;
+      .title {
+        font-size: .9em;
+      }
+      .description {
+        font-size: .7em;
+      }
+    }
+    .close-button {
+      color: white;
+      float: left;
+    }
+  }
+}
+
+#bottom-banner {
+  display: none;
+  background-color: transparentize(#fff, 0.3);
+  box-shadow: 0 -1px 5px rgba(0,0,0,0.15);
+  position: relative;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 10000;
+
+  line-height: 0;
+  text-align: center;
+  .banner-wrap {
+    @include outer-container;
+  }
+  body.bottom-banner-on & {
+    display: block;
+  }
+  img {
+    margin: 0 auto;
+    max-height: 100px;
+  }
+  button.close {
+    position: absolute;
+    top: 0.25em;
+    left: 0.25em;
+    background-image: url('/assets/images/popup_btn_x.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background-color: $black-54;
+    border-radius: 50%;
+  }
+  img.desktop {
+    display: none;
+    @include media($medium-screen-up) {
+      display: block;
+    }
+  }
+  img.mobile {
+    display: block;
+    @include media($medium-screen-up) {
+      display: none;
+    }
+  }
+}

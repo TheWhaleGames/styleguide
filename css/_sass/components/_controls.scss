@@ -1,0 +1,15 @@
+.controls {
+  overflow: hidden;
+  @mixin button($background-color, $color) {
+    margin: .5em;
+    padding: .5em;
+    border-radius: $base-border-radius;
+    background-color: $background-color;
+    color: $color;
+    display: inline-block;
+  }
+
+  a {
+    @include button($medium-gray, white);
+  }
+}

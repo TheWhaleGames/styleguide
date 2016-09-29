@@ -1,0 +1,49 @@
+body.tagged {
+  background-color: #efefef;
+  .container {
+    margin-top: $base-spacing;
+  }
+  .heading {
+    margin-left: 1em;
+    small {
+      color: $black-87;
+    }
+    color: $violet;
+  }
+  ul.tag-category {
+    margin: $base-spacing/2 1em;
+    li {
+      display: inline-block;
+      a {
+        color: $black-54;
+      }
+
+      & span:before {
+        content: '';
+        margin-right: .5em;
+        vertical-align: middle;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        background-image: url('/assets/images/icons/checkbox_empty.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+    li.active {
+      & span:before {
+        background-image: url('/assets/images/icons/checkbox_checked.svg');
+      }
+
+      a {
+        color: $black-87;
+      }
+    }
+    li + li {
+      margin-left: 1em;
+    }
+  }
+  .webtoons .grid-item {
+    padding: 0.25em;
+  }
+}

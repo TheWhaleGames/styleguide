@@ -1,0 +1,175 @@
+.webtoon-detail {
+  @include outer-container;
+  @extend %card;
+  position: relative;
+
+  .webtoon__banner-image {
+    @include aspect-ratio(2,1);
+    @include opacity-border;
+    @include span-columns(12);
+    @include media($large-screen-up) {
+      @include span-columns(8);
+    }
+    background-color: $dark-gray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .webtoon__info {
+    padding-top: 1em;
+    @include span-columns(12);
+    @include media($large-screen-up) {
+      @include span-columns(4);
+    }
+    @include media($large-screen-up) {
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+  }
+
+  .info__more {
+    position: absolute;
+    right: em(16);
+    top: em(16);
+    span {
+      text-align: center;
+      display: inline-block;
+      width: em(24);
+      height: em(24);
+      border: 1px solid $violet;
+      border-radius: 100%;
+    }
+  }
+  .info__genre {
+    padding-left: em(16);
+    padding-right: em(24);
+    span {
+      color: $black-54;
+      font-size: em(16);
+    }
+  }
+
+  .info__title {
+    padding-left: em(16);
+    padding-right: em(24);
+    h1 {
+      color: $black-87;
+      line-height: 1.2;
+      margin-bottom: $base-spacing/4;
+      font-size: 1.3em;
+      @include media($large-screen-up) {
+        font-size: em(20);
+      }
+    }
+  }
+
+  .info__description {
+    padding-left: em(16);
+    padding-right: em(24);
+  }
+
+  .info__page {
+    overflow: hidden;
+    margin-bottom: em(16);
+    line-height: em(40);
+    font-size: em(14);
+    @include media($large-screen-up) {
+      line-height: em(48);
+      font-size: em(16);
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+    }
+
+    img {
+      border-radius: 50%;
+      background-color: $dark-gray;
+      // margin-left: em(22);
+      margin-right: em(8);
+      float: left;
+      width: em(40);
+      height: em(40);
+      @include media($large-screen-up) {
+        width: em(48);
+        height: em(48);
+      }
+    }
+    span {
+      color: $black-87;
+    }
+    span.info__author {
+      color: $violet;
+    }
+  }
+
+  .info__etc {
+    overflow: hidden;
+    padding: 0 em(24) em(16) em(16);
+    width: inherit;
+    @include media($large-screen-up) {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  .info__etc-heading {
+    font-size: em(20);
+    color: $black-87;
+    margin-bottom: em(8);
+  }
+  .info__bulk-purchase {
+    width: 100%;
+    border-radius: 0;
+    color: white;
+    background-color: $violet;
+    font-size: em(18);
+    margin-bottom: rem(4);
+  }
+  .info__bulk-purchase-desc {
+    display: block;
+    font-size: em(12);
+  }
+  .info__links {
+    width: 100%;
+    border: 1px solid $black-20;
+    margin-bottom: em(16);
+    display: table;
+    table-layout: fixed;
+
+    li {
+      text-align: center;
+      display: table-cell;
+      height: em(48);
+      a {
+        display: inline-block;
+        width: 100%;
+        line-height: em(48);
+        color: $black-87;
+      }
+      a.active {
+        color: $violet;
+      }
+    }
+    li + li {
+      border-left: 1px solid $black-20;
+    }
+    span {
+      font-size: em(14);
+    }
+  }
+
+  .info__total-pick {
+    float: left;
+    text-align: center;
+    color: $violet;
+    line-height: em(32);
+    span {
+      font-size: em(20);
+    }
+  }
+
+  .social-share--round {
+    float: right;
+  }
+}

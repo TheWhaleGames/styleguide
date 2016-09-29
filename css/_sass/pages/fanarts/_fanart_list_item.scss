@@ -1,0 +1,106 @@
+.fanarts {
+  .grid-item {
+    padding: 0.25em;
+    @include media($large-screen-up) {
+      padding: 1em .25em;
+    }
+  }
+
+  #loadmore {
+    @extend %card;
+    float: right;
+    border: none;
+    border-radius: 0;
+    &:hover {
+      color: $jiggs-purple;
+      background-color: $light-gray;
+    }
+  }
+}
+
+  .fanart-item {
+    @extend %card;
+    position: relative;
+    overflow: hidden;
+
+    a {
+      display: block;
+      overflow: hidden;
+    }
+
+    &[data-best='true']:after {
+      height: 2em;
+      position: absolute;
+      right: 1em;
+      top: 0;
+      content: "";
+      width: 36px;
+      height: 37px;
+      background-image: url('/assets/images/icons/fanart_pick_ribbon.svg');
+    }
+    .fanart-item__thumb {
+      @include opacity-border;
+      @include aspect-ratio(5,5);
+      background-size: cover;
+      background-position: center;
+      background-color: $dark-gray;
+    }
+    .fanart-item__caption {
+      margin: 0 .25em;
+      padding: .25em 0;
+      border-bottom: 1px solid transparentize(#000, .9);
+      @include media($large-screen-up) {
+        margin: 0 .5em;
+        padding: .5em 0;
+      }
+    }
+    .fanart-item__title {
+      height: 22px;
+      @include media($medium-screen-up) {
+        height: 32px;
+      }
+      color: $dark-text-color;
+      @include ellipsis;
+      display: block;
+    }
+    .fanart-item__author {
+      font-size: .9em;
+      color: $light-text-color;
+      @include ellipsis;
+      display: block;
+      font-size: 12px;
+    }
+    .fanart-item__meta {
+      color: $light-text-color;
+      float: right;
+
+      padding: .25em;
+      @include media($large-screen-up) {
+        padding: .5em;
+      }
+      span {
+        font-size: .8em;
+        padding: .25em 0;
+        text-align: center;
+      }
+      span + span {
+        margin-left: 1.5em;
+      }
+      .pick-count:before {
+        font-family: 'bt-icons';
+        content: '\f10b';
+        margin-right: .5em;
+      }
+      .comment-count:before {
+        font-family: 'bt-icons';
+        content: '\f112';
+        margin-right: .5em;
+      }
+    }
+
+    &:hover {
+      .caption__meta {
+        display: block;
+      }
+    }
+  }

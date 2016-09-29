@@ -1,0 +1,44 @@
+body.collections {
+  background-color: #efefef;
+}
+.page__collections {
+  #new_collection {
+    @extend %card;
+    overflow: hidden;
+    background-color: white;
+    padding: em(8);
+  }
+  margin: 0 auto 5em auto;
+  max-width: 720px;
+
+  .page__new-collection {
+    text-align: center;
+    padding: 1em;
+    @include media($large-screen-up) {
+      padding: 2em;
+    }
+    a {
+      color: $medium-gray;
+      @include media($large-screen-up) {
+        font-size: 1.5em;
+      }
+      &:hover {
+        color: $dark-gray;
+      }
+    }
+  }
+
+  .page__collections-count {
+    margin: em(20);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+    font-size: em(20);
+    line-height: 1.2;
+    color: $black-54;
+    strong {
+      color: $black-87;
+    }
+  }
+}

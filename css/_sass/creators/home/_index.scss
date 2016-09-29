@@ -1,0 +1,58 @@
+.creators-home {
+  .heading {
+    h1,h2,h3,h4,h5,h6 {
+      display: inline-block;
+    }
+    a {
+      float: right;
+    }
+  }
+  .notice {
+    padding: $base-spacing;
+    margin-bottom: $base-spacing;
+  }
+  .webtoons {
+    @include span-columns(6);
+    padding: $base-spacing;
+  }
+  .challenge-webtoon__list {
+    display: block;
+    li {
+      @extend %card;
+      @include clearfix;
+      margin: .5em 0;
+    }
+  }
+  .challenge-webtoon__thumbnail {
+    line-height: 0;
+    @include span-columns(4);
+  }
+  .challenge_webtoon__body {
+    @include span-columns(8);
+    @include omega;
+    padding: .5em;
+  }
+  .challenge_webtoon__title {
+    color: $black-87;
+    line-height: 1.2;
+    font-size: 1em;
+  }
+  .challenge_webtoon__latest-episode {
+    color: $black-54;
+    line-height: 1.4;
+    font-size: 0.875em;
+  }
+  .challenge_webtoon__status {
+    color: $violet;
+    line-height: 1.4em;
+    font-size: 0.875em;
+  }
+  .illusts {
+    @include span-columns(6);
+    @include omega;
+    padding: $base-spacing;
+    .grid-item {
+      padding: .5em .25em;
+    }
+  }
+}

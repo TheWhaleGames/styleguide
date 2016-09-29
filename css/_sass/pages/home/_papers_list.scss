@@ -1,0 +1,12 @@
+.paper-list__wrapper{
+  @extend %horizontal_list;
+  ul.paper-list {
+    li {
+      padding: 0.25em;
+      width: em(200);
+      @include media($large-screen-up) {
+        width: (100%/5);
+      }
+    }
+  }
+}

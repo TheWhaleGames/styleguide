@@ -1,0 +1,63 @@
+.wallets {
+  ul {
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: solid 1px $black-20;
+    width: 100%;
+    margin-bottom: 40px;
+    @include media($medium-screen-up) {
+      display: table;
+      table-layout: fixed;
+      height: 80px;
+    }
+  }
+
+  li {
+    padding: em(16);
+    @include media($medium-screen-up) {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+
+  li + li {
+    border-top: 1px solid $black-20;
+    border-left: 0;
+    @include media($medium-screen-up) {
+      border-top: 0;
+      border-left: 1px solid $black-20;
+    }
+  }
+}
+.wallets__label {
+  display: inline-block;
+  @include media($medium-screen-up) {
+    display: block;
+  }
+
+  span {
+    color: $black-87;
+    font-size: em(12);
+    @include media($medium-screen-up) {
+      font-size: em(14);
+    }
+  }
+}
+.wallets__balance {
+  vertical-align: middle;
+  display: inline-block;
+  float: right;
+  @include media($medium-screen-up) {
+    display: block;
+    float: none;
+  }
+
+  span.wallets__value {
+    color: $violet;
+    font-size: em(20);
+    @include media($medium-screen-up) {
+      font-size: em(24);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.creators-episodes {
+  .episode__new {
+    padding: $base-spacing;
+    background-color: white;
+  }
+  #upload.modal {
+    .modal-dialog {
+      margin-top: 3em;
+    }
+    .modal-header {
+      text-align: center;
+      color: $violet;
+      font-weight: bold;
+      font-size: 1em;
+      line-height: 1.4;
+    }
+    .modal-content {
+      padding: $base-spacing;
+    }
+    .modal-body {
+      text-align: center;
+    }
+  }
+}

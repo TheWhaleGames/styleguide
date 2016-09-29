@@ -1,0 +1,141 @@
+.creators-webtoons-show {
+  .webtoon__info {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: $base-spacing;
+  }
+  .webtoon__actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .webtoon__thumbnail {
+    @include span-columns(3);
+  }
+  .webtoon__thumbnail[data-publishing="draft"]:after {
+    position: absolute;
+    content: '비공개';
+    top: 0;
+    left: 0;
+    background-color: $black-54;
+    color: white;
+    padding: em(8);
+    font-size: em(14);
+  }
+  .webtoon__body {
+    @include span-columns(9);
+    h1 {
+      font-size: 1em;
+    }
+    p {
+      font-size: .75em;
+    }
+  }
+  .webtoon__title {
+    font-size: 1em;
+    line-height: 1.2;
+    color: $black-87;
+  }
+  .webtoon__description {
+    font-size: em(12);
+    line-height: 1.5;
+    color: $black-87;
+  }
+  .webtoon__synopsis {
+    font-size: em(12);
+    line-height: 1.7;
+    color: $black-54;
+  }
+  .webtoon__tags {
+    color: $black-38;
+    line-height: 2;
+    font-size: em(12);
+    li { display: inline-block; }
+    li:before {content: '#'; }
+  }
+  .new-episode__button {
+    a {
+      display: inline-block;
+      padding: 1em 3em;
+      border: solid 1px $violet;
+      background-color: white;
+      border-radius: em(4);
+      font-size: 1em;
+      line-height: 1.2;
+    }
+  }
+  .webtoon__episodes {
+    @include shift(2);
+    @include span-columns(8);
+    @include omega;
+  }
+  .webtoon__episode {
+    @extend %card;
+    @include clearfix;
+    position: relative;
+    margin: .5em;
+  }
+  .episode__thumbnail {
+    @include span-columns(3);
+    line-height: 0;
+  }
+  .episode__body {
+    @include span-columns(9);
+    @include omega;
+    padding: .5em;
+  }
+
+  .webtoon__actions,
+  .episode__actions {
+    position: absolute;
+    bottom: .5em;
+    right: .5em;
+    a {
+      font-size: .75em;
+      display: inline-block;
+      border-radius: .25em;
+      padding: $base-spacing/8 $base-spacing*2;
+    }
+    a.destroy {
+      background-color: #e4e4e4;
+      border: solid 1px $black-20;
+      color: $black-54;
+    }
+    a.default {
+      background-color: white;
+      border: solid 1px $violet;
+      color: $violet;
+    }
+    a.edit {
+      background-color: white;
+      border: solid 1px $black-87;
+      color: $black-87;
+    }
+
+    .dropdown {
+      line-height: 0;
+      overflow: hidden;
+      display: inline;
+    }
+    .dropdown-button:after {
+      color: $violet;
+    }
+    .dropdown-container {
+      line-height: 1.5;
+      vertical-align: middle;
+    }
+    .dropdown-menu a {
+      padding: 0;
+    }
+    .dropdown-menu svg {
+      float: left;
+      margin-right: .5em;
+      width: 24px;
+      height: 24px;
+    }
+    .dropdown-menu span {
+      font-size: em(12);
+      color: $black-54;
+    }
+  }
+}

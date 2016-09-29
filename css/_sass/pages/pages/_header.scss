@@ -1,0 +1,339 @@
+.page-header {
+  @extend %card;
+  position: relative;
+
+  .page-header__manage {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    right: $base-spacing/2;
+    top: $base-spacing/2;
+    a {
+      display: inline-block;
+      padding: $base-spacing/4 $base-spacing/2;
+      background-color: transparentize(white, 0.4);
+      border: 1px solid $jiggs-purple;
+      border-radius: $base-border-radius;
+    }
+  }
+  &:hover {
+    .page-header__manage {
+      @include media($large-screen-up) {
+        display: block;
+      }
+    }
+  }
+
+  .modal--inner-scroll {
+    .modal-dialog {
+      margin-top: em(70);
+      @include media($medium-screen-up) {
+        margin-top: 10em;
+        margin-bottom: 3em;
+      }
+      max-width: em(480);
+    }
+    .modal-header {
+      color: $black-87;
+      padding: em(18);
+      border-bottom: 1px solid rgba(0,0,0,0.15);
+      button.close {
+        line-height: 1;
+        float: right;
+        padding: 0;
+        background: 0 0;
+        border: none;
+        font-size: em(30);
+        margin-top: -10px;
+        color: $black-38;
+        &:hover {
+          color: $black-87;
+        }
+      }
+    }
+    .modal-body {
+      padding: em(8) em(16);
+      background-color: white;
+    }
+    div.user {
+      padding: em(8) 0;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      .user__avatar {
+        width: em(48);
+        height: em(48);
+        border-radius: 50%;
+        margin-right: em(8);
+        float: left;
+      }
+      .user__name {
+        float: left;
+        line-height: em(48);
+        @include ellipsis;
+        max-width: 8em;
+        @include media($large-screen-up) {
+          max-width: 15em;
+        }
+        a {
+          color: $black-87;
+          font-weight: bold;
+        }
+      }
+      .user__follow {
+        float: right;
+        line-height: 1em;
+      }
+      .user__button--following {
+        background-color: $violet;
+        color: white;
+      }
+    }
+  }
+}
+
+.page-header__stat {
+  $base-spacing: 1.5em !default;
+  $stats-color: $dark-text-color;
+
+  float: right;
+  overflow: hidden;
+  padding: $base-spacing / 2;
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    border-right: 1px solid transparentize($base-font-color, 0.8);
+    color: $stats-color;
+    display: inline;
+    float: left;
+    line-height: 1.1em;
+    padding: 0 0.7em;
+
+    @include media($medium-screen-up) {
+      font-size: 1.2em;
+    }
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  span {
+    color: $black-87;
+    display: block;
+    font-size: 0.7em;
+    font-weight: normal;
+  }
+  .page-header__stat-item--bold {
+    font-weight: bold;
+    a {
+      color: $black-87;
+    }
+  }
+  .page-header__stat-item--bold span {
+    font-weight: bold;
+  }
+}
+.page-header__cover {
+  @include aspect-ratio(1080, 338);
+  background-color: $dark-gray;
+  background-size: cover;
+  background-position: top;
+}
+
+.page-header__heading {
+  display: inline-block;
+  width: 100%;
+  background-color: white;
+  position: relative;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 2.5em;
+  padding-bottom: 1em;
+  @include media($large-screen-up) {
+    min-height: em(154);
+    padding-top: 1em;
+    padding-left: 12.5em;
+  }
+  .page-header__user {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -2.5em;
+    margin-left: auto;
+    margin-right: auto;
+    @include media($large-screen-up) {
+      width: em(160);
+      left: 1em;
+      top: -5em;
+      margin: 0;
+    }
+  }
+
+  img.page-header__avatar {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    border: 2px solid white;
+    height: em(80);
+    width: em(80);
+    @include media($large-screen-up) {
+      display: block;
+      height: em(160);
+      width: em(160);
+    }
+  }
+
+  .page-header__flow-wrap {
+    display: inline-block;
+    width: 100%;
+  }
+  .page-header__hello {
+    @include media($large-screen-up) {
+      float: left;
+      @include clearfix;
+    }
+  }
+
+  h1.page-header__author {
+    @include ellipsis;
+    color: $black-87;
+    margin: 0;
+    font-size: 1.2em;
+    @include media($large-screen-up) {
+      font-size: em(28);
+    }
+  }
+
+  p.page-header__greeting {
+    color: $black-54;
+    margin: 0;
+    font-size: 1em;
+    @include media($large-screen-up) {
+      font-size: em(20);
+    }
+  }
+
+  .page-header__follow {
+    margin-top: 1em;
+    position: absolute;
+    right: 1em;
+    bottom: 2em;
+    @include media($large-screen-up) {
+      position: initial;
+    }
+    a {
+      padding: $base-spacing/4 $base-spacing/2;
+      border: 1px solid $jiggs-purple;
+      border-radius: $base-border-radius;
+      background-color: white;
+      @include media($large-screen-up) {
+        padding: $base-spacing/3 $base-spacing;
+        display: block;
+      }
+      &:hover {
+        background-color: $jiggs-purple;
+        color: white;
+      }
+    }
+    a.follow {
+      &:before {
+        font-family: FontAwesome;
+        content: '\f067';
+        margin-right: 0.5em;
+      }
+    }
+    a.unfollow {
+      color: white;
+      background-color: $violet;
+      &:hover {
+        background-color: lighten($violet, 10%)
+      }
+      &:before {
+        font-family: FontAwesome;
+        content: '\f00c';
+        margin-right: 0.5em;
+      }
+    }
+  }
+}
+
+.page-header__webtoons {
+  background-color: white;
+  overflow: hidden;
+  @include media($large-screen-up) {
+    padding: 1em;
+    h2 {
+      display: none;
+    }
+  }
+  h2 {
+    color: $light-text-color;
+    a {
+      display: inline;
+      color: $light-text-color;
+      @include media($large-screen-up) {
+        display: none;
+      }
+    }
+  }
+  ul {
+    display: none;
+    @include media($large-screen-up) {
+      display: block;
+    }
+  }
+
+  &.page-header__webtoons--open {
+    ul {
+      display: block !important;
+    }
+  }
+
+  li {
+    display: inline-block;
+    max-width: em(80);
+  }
+  li + li {
+    margin-left: 1em;
+  }
+}
+.page-header__webtoon {
+  text-align: center;
+  .thumbnail {
+    margin: 0 auto;
+    background-color: $dark-gray;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    @include media($large-screen-up) {
+      width: em(80);
+      height: em(80);
+    }
+  }
+  .name {
+    font-size: 14px;
+    color: transparentize(#000, 0.13);
+    display: none;
+    @include media($medium-screen-up) {
+      @include ellipsis;
+      display: block;
+    }
+  }
+}
+.page__wrapper {
+  height: 100%;
+  padding-left: .5em;
+  padding-right: .5em;
+  @include media($large-screen-up) {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}

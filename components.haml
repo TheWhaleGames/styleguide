@@ -1,0 +1,7 @@
+---
+layout: default
+title: components
+---
+.container.home.home-index
+  {% capture buttons %}{% haml buttons.haml %}{% endcapture %}{{ buttons | strip_newlines }}
+  {% capture cards %}{% haml cards.haml %}{% endcapture %}{{ cards | strip_newlines }}

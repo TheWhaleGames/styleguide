@@ -1,0 +1,28 @@
+
+%section#buttons
+  %br
+  %h1 버튼
+  %article 버튼은 나중에 만드는걸로
+  %section
+    %h2 픽 버튼
+    %article 설ㅁㅇ
+    .components_box
+      .components_box_upper
+        .pick 
+          %button.pick-button 
+            %span 0
+        .pick
+          %button.pick-button.pick-button--picked{disabled:true}
+            %span 1
+      .components_box_lower
+        .language_wraper    
+          %ul
+            %li.html
+              %span HTML
+            %li.haml
+              %span HAML
+        %pre
+          %code.tab-pane.html
+            :preserve
+          %code.tab-pane.haml
+            :preserve
